@@ -1,0 +1,1571 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<div class="tfw" style="width:100vw;max-width:100vw;margin-left:calc(50% - 50vw);margin-right:calc(50% - 50vw);position:relative;left:0;box-sizing:border-box;overflow:hidden;background:#E9E6E1;">
+<style>
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@700;800&display=swap');
+.tf{max-width:520px;margin:0 auto;background:#fff;font-family:'Pretendard',-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo','Malgun Gothic','Noto Sans KR',sans-serif;color:#141414;line-height:1.55;word-break:keep-all;overflow-wrap:break-word;-webkit-text-size-adjust:100%;overflow:hidden;text-align:center}
+.tf *{box-sizing:border-box}
+.tf p,.tf h2,.tf h3,.tf ul,.tf li{margin:0;padding:0}
+.tf ul{list-style:none}
+.tf img{max-width:100%;display:block;height:auto}
+.tf b{font-weight:900}
+.tf .mo{font-family:'JetBrains Mono',ui-monospace,Menlo,monospace;letter-spacing:.06em}
+/* sections */
+.tf .s{padding:68px 24px;position:relative}
+.tf .w{background:#fff}
+.tf .gy{background:#F4F2EE}
+.tf .dk{background:#141414;color:#fff}
+.tf .bk{background:#0A0A0A;color:#fff}
+.tf .rd{background:#E2141B;color:#fff}
+.tf .pk{background:#FFF1F1}
+/* type */
+.tf .t0{font-size:54px;font-weight:900;letter-spacing:-.045em;line-height:1.12}
+.tf .t1{font-size:34px;font-weight:900;letter-spacing:-.035em;line-height:1.3}
+.tf .t2{font-size:28px;font-weight:900;letter-spacing:-.03em;line-height:1.35}
+.tf .t3{font-size:22px;font-weight:900;letter-spacing:-.02em;line-height:1.42}
+.tf .lead{font-size:18px;font-weight:700;color:#5E5E5E;line-height:1.6}
+.tf .dk .lead,.tf .bk .lead{color:#A7A39D}
+.tf .rd .lead{color:#FFDCDD}
+.tf .sm{font-size:12px;color:#8F8B85;line-height:1.6}
+.tf .dk .sm,.tf .bk .sm{color:#77736E}
+.tf .rd .sm{color:#FFC9CB}
+.tf .k{color:#E2141B}
+.tf .dk .k,.tf .bk .k{color:#FF3B41}
+.tf .y{color:#FFD23F}
+.tf .bx{display:inline-block;background:#141414;color:#fff;padding:2px 12px;margin:3px 0;position:relative;overflow:hidden}
+.tf .dk .bx,.tf .bk .bx,.tf .rd .bx{background:#fff;color:#141414}
+.tf .rb{display:inline-block;background:#E2141B;color:#fff;padding:2px 12px;margin:3px 0;position:relative;overflow:hidden}
+.tf .yb{display:inline-block;background:#FFD23F;color:#141414;padding:2px 10px;margin:3px 0}
+.tf .mk{background:linear-gradient(transparent 58%,#FFD23F 58%)}
+.tf .tag{display:inline-block;font-size:12.5px;font-weight:900;color:#fff;background:#E2141B;padding:5px 12px;border-radius:4px;letter-spacing:.04em;position:relative;overflow:hidden}
+.tf .tag.d{background:#141414}.tf .tag.w{background:#fff;color:#E2141B}.tf .tag.yl{background:#FFD23F;color:#141414}
+.tf .gap{height:26px}.tf .gap2{height:48px}.tf .gap3{height:76px}
+/* sheen */
+@keyframes tfSheen{0%,55%{left:-70%}100%{left:130%}}
+/* chevron */
+@keyframes tfCh{0%,100%{transform:translateY(0);opacity:.45}50%{transform:translateY(7px);opacity:1}}
+.tf .chev{display:inline-block;font-size:30px;color:#E2141B;line-height:.5;animation:tfCh 1.4s ease-in-out infinite;margin:26px 0 8px}
+.tf .chev:before{content:"⌄\A⌄";white-space:pre;font-weight:900}
+.tf .dk .chev,.tf .bk .chev{color:#FF3B41}.tf .rd .chev{color:#fff}
+/* ribbon */
+.tf .rib{background:#0B0B0B;color:#EDEAE4;font-size:13px;font-weight:600;padding:12px 0;white-space:nowrap;overflow:hidden;position:relative;border-bottom:1px solid #2A2A2A}
+.tf .rib:before{content:"";position:absolute;left:0;right:0;top:0;height:2px;background:linear-gradient(90deg,#0B0B0B,#E2141B 50%,#0B0B0B);background-size:200% 100%;animation:tfRl 3s linear infinite}
+@keyframes tfRl{from{background-position:0 0}to{background-position:-200% 0}}
+.tf .rib:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#0B0B0B 0,transparent 12%,transparent 88%,#0B0B0B 100%);pointer-events:none}
+.tf .rib .rtr{display:inline-block;animation:tfMq 26s linear infinite}
+.tf .rib .it{display:inline-flex;align-items:center;gap:8px;margin:0 22px;position:relative}
+.tf .rib .it:after{content:"";position:absolute;right:-23px;top:50%;width:3px;height:3px;border-radius:50%;background:#555}
+.tf .rib .dot{width:7px;height:7px;border-radius:50%;background:#FF2A31;box-shadow:0 0 0 0 rgba(255,42,49,.6);animation:tfDot 1.4s ease-out infinite}
+@keyframes tfDot{0%{box-shadow:0 0 0 0 rgba(255,42,49,.7)}100%{box-shadow:0 0 0 8px rgba(255,42,49,0)}}
+.tf .rib em{font-style:normal;font-family:'JetBrains Mono',monospace;font-size:11.5px;font-weight:800;letter-spacing:.14em;color:#FF3B41}
+.tf .rib s{color:#77736E;text-decoration-color:#77736E}
+.tf .rib b{color:#fff;font-weight:900;font-size:14px}
+.tf .rib small{font-size:11px;font-weight:900;color:#0B0B0B;background:#FF2A31;padding:2px 6px;border-radius:4px}
+.tf .rib strong{color:#fff;font-weight:800}
+@keyframes tfMq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+/* reveal */
+.tf.js .rv{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
+.tf.js .rv.in{opacity:1;transform:none}
+/* ===== HERO ===== */
+.tf .hero{background:#0A0A0A;color:#fff;padding:54px 22px 0;position:relative;overflow:hidden}
+.tf .hero:before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(135deg,transparent 0 20px,rgba(226,20,27,.07) 20px 40px)}
+.tf .hero>*{position:relative}
+.tf .warn{display:inline-flex;align-items:center;gap:8px;font-size:18px;font-weight:900;color:#FF3B41;border:2px solid #FF3B41;border-radius:999px;padding:10px 20px;letter-spacing:-.02em;animation:tfAl 1.2s steps(1) infinite}
+@keyframes tfAl{50%{background:#FF3B41;color:#0A0A0A}}
+.tf .hero .pre{font-size:19px;font-weight:700;color:#CFCBC5;margin-top:22px;line-height:1.5}
+.tf .hero .pre b{color:#fff;border-bottom:3px solid #E2141B}
+.tf .hero .t0{margin-top:18px}
+.tf .hero .nw{display:block;white-space:nowrap;font-size:.74em;letter-spacing:-.05em}
+.tf .hero .t0 .k{display:block;color:#FF2A31;text-shadow:0 0 28px rgba(255,42,49,.45)}
+.tf .bkfx{position:relative;margin:30px auto 0;border-radius:14px;overflow:hidden;animation:tfFl 4.2s ease-in-out infinite;box-shadow:0 0 50px rgba(226,20,27,.35)}
+@keyframes tfFl{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+@keyframes tfBs{0%{background-position:160% 0}55%,100%{background-position:-60% 0}}
+.tf .hband{background:#E2141B;margin:34px -22px 0;padding:34px 22px 38px}
+.tf .hband p{font-size:22px;font-weight:900;line-height:1.45;letter-spacing:-.02em}
+.tf .hband .sm{color:#FFD9DA;font-size:13.5px;margin-top:10px;font-weight:600}
+/* search */
+.tf .srch{margin:30px auto 0;max-width:420px;background:#fff;border:3px solid #141414;border-radius:999px;padding:14px 22px;font-size:20px;font-weight:900;text-align:left;box-shadow:0 8px 20px rgba(0,0,0,.08)}
+.tf .srch .q{color:#E2141B}
+.tf .srch .cur{display:inline-block;width:2px;height:21px;background:#141414;animation:tfBl 1s steps(1) infinite;vertical-align:-3px;margin-left:2px}
+@keyframes tfBl{50%{opacity:0}}
+.tf .rel{margin-top:12px;font-size:12.5px;color:#8F8B85;display:flex;justify-content:center;gap:6px;align-items:center;flex-wrap:wrap}
+.tf .rel span{border:1px solid #DDD9D3;border-radius:999px;padding:4px 10px;color:#141414;font-weight:700}
+/* bubbles */
+.tf .bubs{margin-top:42px;display:flex;flex-direction:column;gap:24px}
+.tf .bub{position:relative;max-width:310px;background:#232323;color:#fff;border-radius:16px;padding:17px 20px;font-size:16.5px;font-weight:600;line-height:1.5}
+.tf .bub:after{content:"";position:absolute;bottom:-12px;border:12px solid transparent;border-bottom:0;border-top-color:#232323}
+.tf .bub.l{align-self:flex-start;margin-left:14px}.tf .bub.l:after{left:40px}
+.tf .bub.r{align-self:flex-end;margin-right:14px}.tf .bub.r:after{right:40px}
+.tf .bub em{font-style:normal;position:absolute;font-size:38px;bottom:-24px}
+.tf .bub.l em{left:-16px}.tf .bub.r em{right:-16px}
+/* cases */
+.tf .cases{display:grid;grid-template-columns:1fr;gap:10px;margin-top:30px}
+.tf .case{background:#fff;border-radius:14px;padding:18px 14px;border:1.5px solid #E7E3DD;text-align:left;box-shadow:0 8px 20px rgba(0,0,0,.05)}
+.tf .case:nth-child(1){transform:rotate(-1.5deg)}.tf .case:nth-child(2){transform:rotate(1.5deg) translateY(4px)}.tf .case:nth-child(3){transform:rotate(1deg)}.tf .case:nth-child(4){transform:rotate(-1deg) translateY(4px)}
+.tf .case .a{font-size:30px;font-weight:900;letter-spacing:-.04em;color:#E2141B;line-height:1.1}
+.tf .case .b{font-size:13px;color:#5E5E5E;margin-top:6px;font-weight:700;line-height:1.45}
+/* bomb */
+.tf .led{display:inline-block;margin:32px auto 0;background:#170405;border:3px solid #3E0B0D;border-radius:18px;padding:20px 22px 14px;box-shadow:0 0 60px rgba(226,20,27,.4),inset 0 0 30px rgba(226,20,27,.18);animation:tfSh 3s ease-in-out infinite}
+.tf .led .d{font-family:'JetBrains Mono',ui-monospace,monospace;font-weight:800;font-size:58px;letter-spacing:.04em;color:#FF2A31;text-shadow:0 0 18px rgba(255,42,49,.85);line-height:1;animation:tfBl 1s steps(1) infinite}
+.tf .led .u{display:flex;justify-content:space-around;font-family:'JetBrains Mono',monospace;font-size:10.5px;font-weight:800;letter-spacing:.2em;color:#7E2B2E;margin-top:10px}
+@keyframes tfSh{0%,86%,100%{transform:none}88%{transform:translateX(-4px) rotate(-1deg)}90%{transform:translateX(4px) rotate(1deg)}92%{transform:translateX(-3px)}94%{transform:translateX(3px)}}
+.tf .wire{display:flex;justify-content:center;gap:8px;margin-top:-3px}
+.tf .wire i{display:block;width:6px;height:40px;border-radius:0 0 3px 3px}
+.tf .zero{font-size:104px;font-weight:900;letter-spacing:-.06em;line-height:1;color:#FF2A31;margin-top:8px;text-shadow:0 0 40px rgba(255,42,49,.35)}
+.tf .zero small{font-size:30px;color:#fff;letter-spacing:-.02em}
+.tf .drop{margin:26px auto 0;max-width:400px;background:#161616;border:1px solid #2C2C2C;border-radius:18px;padding:20px 18px;text-align:left}
+.tf .drop .h{display:flex;justify-content:space-between;font-size:12px;color:#8A867F;font-weight:700}
+.tf .drop .v{font-size:38px;font-weight:900;letter-spacing:-.04em;margin-top:6px;color:#fff}
+.tf .drop .v.z{color:#FF2A31}
+.tf .drop .bar{height:10px;border-radius:5px;background:#2A2A2A;margin-top:12px;overflow:hidden}
+.tf .drop .bar i{display:block;height:100%;width:100%;background:linear-gradient(90deg,#FF2A31,#FF7A45);border-radius:5px;transition:width 2.2s cubic-bezier(.6,0,.4,1) .3s}
+.tf .drop.go .bar i{width:0}
+.tf .lns{max-width:420px;margin:30px auto 0;text-align:left}
+.tf .lns div{display:flex;gap:14px;padding:14px 2px;border-top:1px solid #2A2A2A;font-size:16px;font-weight:700;color:#DAD6D0;line-height:1.5}
+.tf .lns div:last-child{border-bottom:1px solid #2A2A2A}
+.tf .lns b{font-family:'JetBrains Mono',monospace;color:#FF3B41;min-width:26px}
+/* mail + domino */
+.tf .mail{max-width:440px;margin:34px auto 0;background:#fff;border-radius:16px;box-shadow:0 24px 50px rgba(0,0,0,.45);text-align:left;overflow:hidden;color:#141414;transform:rotate(-1.2deg)}
+.tf .mail .bar{display:flex;gap:6px;padding:11px 14px;background:#ECE9E4}
+.tf .mail .bar i{width:10px;height:10px;border-radius:50%;background:#C8C4BD;display:block}
+.tf .mail .bd{padding:22px 22px 24px}
+.tf .mail .fr{font-size:12.5px;color:#8F8B85}
+.tf .mail .sj{font-size:19px;font-weight:900;margin:6px 0 12px;letter-spacing:-.02em;color:#E2141B}
+.tf .mail .tx{font-size:14.5px;color:#4A4A4A;line-height:1.7}
+.tf .mail .ch{display:flex;gap:6px;flex-wrap:wrap;margin-top:14px}
+.tf .mail .ch span{font-size:12.5px;font-weight:800;padding:5px 9px;border-radius:6px;background:#FFE7E8;color:#B10D13}
+.tf .dom{display:flex;justify-content:center;gap:8px;margin-top:40px}
+.tf .dom div{width:58px;height:80px;border-radius:10px;background:#262626;border:2px solid #3A3A3A;position:relative;font-family:'JetBrains Mono',monospace;font-size:10px;color:#8A867F;transform-origin:bottom right}
+.tf .dom div:before{content:"";width:26px;height:18px;border-radius:5px;background:#E2141B;display:block;position:absolute;top:18px;left:50%;margin-left:-13px}
+.tf .dom div span{position:absolute;bottom:9px;left:0;right:0;text-align:center}
+.tf .dom div{animation:tfDom 4s ease-in-out infinite}
+.tf .dom div:nth-child(2){animation-delay:.18s}.tf .dom div:nth-child(3){animation-delay:.36s}.tf .dom div:nth-child(4){animation-delay:.54s}.tf .dom div:nth-child(5){animation-delay:.72s}
+@keyframes tfDom{0%,25%{transform:none;opacity:1}40%,80%{transform:rotate(22deg);opacity:.35}95%,100%{transform:none;opacity:1}}
+.tf .quo{background:#1C1C1C;border:1px solid #303030;border-radius:16px;padding:24px 20px;margin-top:30px;text-align:left}
+.tf .quo .en{font-family:'JetBrains Mono',monospace;font-size:13px;color:#A7A39D;line-height:1.6;letter-spacing:0}
+.tf .quo .en b{color:#FFD23F}
+.tf .quo .ko{font-size:19px;font-weight:900;margin-top:10px;line-height:1.45;color:#fff}
+.tf .quo .by{font-family:'JetBrains Mono',monospace;font-size:10.5px;color:#77736E;margin-top:10px;letter-spacing:0}
+/* lost list */
+.tf .lost{max-width:400px;margin:30px auto 0;display:flex;flex-direction:column;gap:10px}
+.tf .lost div{position:relative;background:#fff;border:1.5px solid #E7E3DD;border-radius:14px;padding:16px 18px;font-size:18px;font-weight:800;display:flex;justify-content:space-between;align-items:center}
+.tf .lost div span{color:#8F8B85;font-size:14px;font-weight:700}
+.tf .lost div:after{content:"";position:absolute;left:14px;right:14px;top:50%;height:3px;background:#E2141B;transform:scaleX(0);transform-origin:left;transition:transform .6s ease}
+.tf .lost.in div:after{transform:scaleX(1)}
+.tf .lost.in div:nth-child(2):after{transition-delay:.35s}.tf .lost.in div:nth-child(3):after{transition-delay:.7s}.tf .lost.in div:nth-child(4):after{transition-delay:1.05s}
+/* cost compare */
+.tf .cost{display:flex;flex-direction:column;gap:10px;margin-top:30px}
+.tf .cr{display:flex;justify-content:space-between;align-items:center;gap:12px;background:#1C1C1C;border:1px solid #303030;border-radius:14px;padding:18px 18px;text-align:left}
+.tf .cr .kk{font-size:15.5px;font-weight:800;color:#fff}
+.tf .cr .kk small{display:block;font-size:12.5px;color:#8A867F;font-weight:600;margin-top:2px}
+.tf .cr .vv{font-size:21px;font-weight:900;color:#FF3B41;white-space:nowrap;letter-spacing:-.03em}
+.tf .cr.win{background:#fff;border-color:#fff}
+.tf .cr.win .kk{color:#141414}.tf .cr.win .kk small{color:#8F8B85}
+.tf .cr.win .vv{color:#E2141B}
+/* timeline */
+.tf .tl{margin:34px auto 0;max-width:420px;border-left:3px solid #141414;padding-left:24px;text-align:left}
+.tf .tl .st{position:relative;padding-bottom:24px}
+.tf .tl .st:before{content:"";position:absolute;left:-33px;top:3px;width:15px;height:15px;border-radius:50%;background:#fff;border:3px solid #141414}
+.tf .tl .st.bad:before{background:#E2141B;border-color:#E2141B}
+.tf .tl .st.ok:before{background:#22C26A;border-color:#22C26A}
+.tf .tl .n{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:800;color:#8F8B85}
+.tf .tl h4{font-size:18px;font-weight:900;margin:2px 0 0;letter-spacing:-.02em}
+.tf .tl p{font-size:14.5px;color:#5E5E5E;margin-top:3px;line-height:1.6}
+.tf .eur{position:relative;background:#141414;color:#fff;border-radius:18px;padding:26px 20px 22px;margin-top:20px;text-align:left}
+.tf .eur .bd{position:absolute;top:-14px;right:18px;background:#FFD23F;color:#141414;font-weight:900;font-size:14px;padding:5px 12px;border-radius:999px;transform:rotate(4deg)}
+.tf .eur .en{font-family:'JetBrains Mono',monospace;font-size:13px;color:#BDB9B3;line-height:1.6;letter-spacing:0}
+.tf .eur .en b{color:#FFD23F}
+.tf .eur .ko{font-size:21px;font-weight:900;margin-top:10px}
+.tf .eur .by{font-family:'JetBrains Mono',monospace;font-size:10.5px;color:#77736E;margin-top:10px;letter-spacing:0}
+/* diagram */
+.tf .dg{display:flex;flex-direction:column;gap:12px;margin-top:30px}
+.tf .dg>div{background:#fff;border-radius:18px;padding:22px 16px 18px}
+.tf .dg .bad{border:2px dashed #E2141B}.tf .dg .good{border:2px solid #141414}
+.tf .dg .lb{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:800;letter-spacing:.08em;margin-bottom:10px}
+.tf .dg .bad .lb{color:#E2141B}
+.tf .dg svg{width:100%;max-width:330px;height:auto;display:block;margin:0 auto}
+.tf .dg p{font-size:15.5px;font-weight:800;margin-top:10px}
+/* vs */
+.tf .vs{display:flex;flex-direction:column;gap:10px;margin-top:28px;text-align:left}
+.tf .vs>div{border-radius:16px;padding:20px 20px}
+.tf .vs .l{background:#F4F2EE}.tf .vs .r{background:#E2141B;color:#fff}
+.tf .vs .lb{font-size:12px;font-weight:800;opacity:.75;margin-bottom:6px}
+.tf .vs li{font-size:16px;font-weight:800;padding:7px 0;border-top:1px solid rgba(0,0,0,.07)}
+.tf .vs .r li{border-color:rgba(255,255,255,.25)}
+.tf .vs .l li{color:#9A968F;text-decoration:line-through}
+/* seven */
+.tf .sev{margin-top:26px;text-align:left;counter-reset:s}
+.tf .sev li{display:flex;gap:14px;padding:18px 0;border-top:1.5px solid #E7E3DD}
+.tf .sev li:last-child{border-bottom:1.5px solid #E7E3DD}
+.tf .sev li:before{counter-increment:s;content:"0" counter(s);font-family:'JetBrains Mono',monospace;font-weight:800;font-size:19px;color:#E2141B;min-width:32px}
+.tf .sev b{display:block;font-size:17px;line-height:1.45;letter-spacing:-.02em}
+.tf .sev span{display:block;font-size:14px;color:#5E5E5E;margin-top:3px}
+/* four */
+.tf .four{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:28px;text-align:left}
+.tf .four div{background:#fff;color:#141414;border-radius:14px;padding:16px 14px}
+.tf .four b{display:block;color:#E2141B;font-size:16px;line-height:1.35}
+.tf .four span{display:block;font-size:13px;color:#5E5E5E;margin-top:6px;line-height:1.5;font-weight:600}
+/* shields */
+.tf .shs{display:flex;flex-direction:column;gap:10px;margin-top:30px}
+.tf .sh{display:flex;align-items:center;gap:16px;background:#1C1C1C;border:1px solid #303030;border-radius:18px;padding:18px 18px;text-align:left}
+.tf .sh.st{background:#E2141B;border-color:#E2141B;animation:tfGl 2.4s ease-in-out infinite}
+@keyframes tfGl{0%,100%{box-shadow:0 0 0 rgba(226,20,27,0)}50%{box-shadow:0 0 34px rgba(226,20,27,.6)}}
+.tf .sh svg{width:46px;height:54px;flex:none}
+.tf .sh .no{font-family:'JetBrains Mono',monospace;font-size:10.5px;font-weight:800;color:#8A867F}
+.tf .sh.st .no{color:#FFD9DA}
+.tf .sh h4{font-size:21px;font-weight:900;margin:1px 0 2px;letter-spacing:-.02em}
+.tf .sh p{font-size:13.5px;color:#BDB9B3;line-height:1.5}
+.tf .sh.st p{color:#FFE3E4}
+/* table */
+.tf .tbl{margin-top:28px;border:2px solid #141414;border-radius:16px;overflow:hidden;text-align:left}
+.tf .tbl .row{border-top:1px solid #E7E3DD}
+.tf .tbl .row:first-child{border-top:0}
+.tf .tbl .q{background:#141414;color:#fff;font-size:14px;font-weight:900;padding:10px 14px}
+.tf .tbl .ab{display:grid;grid-template-columns:1fr 1fr}
+.tf .tbl .ab div{padding:12px 14px;font-size:13.5px;line-height:1.5}
+.tf .tbl .ab div:first-child{color:#8F8B85;background:#F7F5F2}
+.tf .tbl .ab div:first-child:before{content:"✕ 모르면";display:block;font-size:11px;font-weight:900;color:#E2141B;margin-bottom:2px}
+.tf .tbl .ab div:last-child{font-weight:800}
+.tf .tbl .ab div:last-child:before{content:"✓ 이 책대로";display:block;font-size:11px;font-weight:900;color:#22C26A;margin-bottom:2px}
+/* volume */
+.tf .vol{font-size:124px;font-weight:900;letter-spacing:-.06em;line-height:1;color:#E2141B;margin-top:16px}
+.tf .vol small{font-size:36px;color:#141414;letter-spacing:-.03em}
+.tf .stk{display:flex;justify-content:center;align-items:flex-end;gap:8px;margin-top:30px;height:190px}
+.tf .stk div{width:23%;min-height:66px;border-radius:10px 10px 4px 4px;display:flex;flex-direction:column;justify-content:flex-end;padding:10px 4px;color:#fff;text-align:center;transform-origin:bottom;transform:scaleY(.05);transition:transform 1.2s cubic-bezier(.2,.9,.3,1)}
+.tf .stk.in div{transform:none}
+.tf .stk.in div:nth-child(2){transition-delay:.15s}.tf .stk.in div:nth-child(3){transition-delay:.3s}.tf .stk.in div:nth-child(4){transition-delay:.45s}
+.tf .stk b{font-size:19px;display:block}
+.tf .stk span{font-size:11px;font-weight:700;opacity:.92;line-height:1.3}
+.tf .stats{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:28px;text-align:left}
+.tf .stats div{background:#fff;border:1.5px solid #E7E3DD;border-radius:14px;padding:18px 16px}
+.tf .stats b{display:block;font-size:38px;letter-spacing:-.04em;line-height:1}
+.tf .stats b small{font-size:16px}
+.tf .stats div>span{display:block;font-size:14px;font-weight:800;margin-top:8px}
+.tf .stats em{display:block;font-style:normal;font-size:12px;color:#8F8B85;margin-top:2px}
+/* evidence */
+.tf .evi{display:flex;flex-direction:column;gap:8px;margin-top:28px;text-align:left}
+.tf .ev{background:#fff;border:1.5px solid #E7E3DD;border-radius:12px;padding:14px 16px;display:flex;gap:12px;align-items:flex-start}
+.tf .ev .id{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:800;color:#fff;background:#141414;padding:3px 7px;border-radius:4px;flex:none;margin-top:2px;letter-spacing:0}
+.tf .ev.h .id{background:#E2141B}
+.tf .ev b{display:block;font-size:15px;line-height:1.4}
+.tf .ev em{display:block;font-style:normal;font-size:12.5px;color:#8F8B85;margin-top:2px}
+.tf .prf{background:#141414;color:#fff;border-radius:18px;padding:24px 20px;text-align:left;margin-top:30px}
+.tf .prf .t{font-size:24px;font-weight:900;margin:4px 0 10px}
+.tf .prf li{font-size:15px;color:#C9C5BF;padding:11px 0;border-top:1px solid #2E2E2E;line-height:1.6}
+.tf .prf li b{color:#fff}
+/* toc */
+.tf .toc{margin-top:28px;text-align:left}
+.tf .pt{display:flex;gap:14px;padding:16px 0;border-top:1px solid #2E2E2E}
+.tf .pt:last-child{border-bottom:1px solid #2E2E2E}
+.tf .pt .pn{font-family:'JetBrains Mono',monospace;font-size:26px;font-weight:800;color:#5A5650;min-width:40px;line-height:1.1}
+.tf .pt h4{font-size:16.5px;font-weight:900;letter-spacing:-.02em;line-height:1.4}
+.tf .pt p{font-size:13px;color:#A7A39D;margin-top:3px;line-height:1.55}
+.tf .pt.core{background:#E2141B;border-radius:14px;padding:16px 14px;border:0;margin:4px 0}
+.tf .pt.core .pn{color:#fff}.tf .pt.core p{color:#FFE3E4}
+.tf .pt .cb{display:inline-block;font-size:10.5px;font-weight:900;background:#FFD23F;color:#141414;padding:1px 7px;border-radius:4px;margin-left:4px;vertical-align:2px}
+/* steps */
+.tf .steps{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-top:28px}
+.tf .stp{background:#fff;border:1.5px solid #E7E3DD;border-radius:12px;padding:12px 10px;text-align:left;min-height:96px}
+.tf .stp .n{font-family:'JetBrains Mono',monospace;font-size:10.5px;font-weight:800;color:#E2141B}
+.tf .stp b{display:block;font-size:13.5px;margin-top:5px;line-height:1.4;letter-spacing:-.02em}
+.tf .stp.last{background:#E2141B;border-color:#E2141B;color:#fff}.tf .stp.last .n{color:#FFD23F}
+.tf .tmr{display:inline-block;margin-top:24px;background:#FFD23F;padding:11px 18px;border-radius:999px;font-weight:900;font-size:15.5px}
+/* chips */
+.tf .chips{display:flex;flex-wrap:wrap;gap:7px;justify-content:center;margin-top:26px}
+.tf .chips span{font-size:14px;font-weight:800;padding:9px 13px;border-radius:10px;background:#fff;border:1.5px solid #E7E3DD}
+.tf .chips span:nth-child(4n+1){border-color:#E2141B;color:#E2141B}
+.tf .chips span:nth-child(4n+3){background:#141414;color:#fff;border-color:#141414}
+/* bonus */
+.tf .bcirc{width:132px;height:132px;border-radius:50%;margin:30px auto 0;border:4px solid #E2141B;display:flex;flex-direction:column;align-items:center;justify-content:center;background:#fff;position:relative;animation:tfCi 2.6s ease-in-out infinite}
+@keyframes tfCi{0%,100%{box-shadow:0 0 26px rgba(226,20,27,.25);transform:scale(1)}50%{box-shadow:0 0 54px rgba(226,20,27,.5);transform:scale(1.04)}}
+.tf .bcirc b{font-size:56px;color:#E2141B;line-height:1}
+.tf .bcirc span{font-size:13px;font-weight:900}
+.tf .bcirc i{position:absolute;top:6px;right:-14px;background:#FFD23F;font-style:normal;font-size:11px;font-weight:900;padding:3px 8px;border-radius:999px;transform:rotate(14deg)}
+.tf .bks{display:flex;flex-direction:column;gap:10px;margin-top:28px;text-align:left}
+.tf .bkc{display:flex;gap:14px;align-items:center;background:#fff;border-radius:16px;padding:16px;border:1.5px solid #E7E3DD}
+.tf .bkc .mk2{width:74px;height:98px;flex:none;border-radius:4px 10px 10px 4px;padding:9px 8px;color:#fff;display:flex;flex-direction:column;justify-content:space-between;box-shadow:5px 6px 0 rgba(0,0,0,.08);font-size:12px;font-weight:900;line-height:1.25}
+.tf .bkc .mk2 small{font-family:'JetBrains Mono',monospace;font-size:8.5px;opacity:.85}
+.tf .bkc .nn{font-family:'JetBrains Mono',monospace;font-size:10.5px;font-weight:800;color:#E2141B}
+.tf .bkc h4{font-size:16px;font-weight:900;line-height:1.35;margin:2px 0 5px;letter-spacing:-.02em}
+.tf .bkc li{font-size:12.5px;color:#5E5E5E;padding:1px 0 1px 11px;position:relative;line-height:1.5}
+.tf .bkc li:before{content:"";position:absolute;left:0;top:8px;width:5px;height:5px;border-radius:1px;background:#E2141B}
+.tf .val{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-top:16px}
+.tf .val div{background:#fff;border:1.5px solid #E7E3DD;border-radius:12px;padding:12px 6px}
+.tf .val b{display:block;font-size:20px;color:#E2141B;letter-spacing:-.03em}
+.tf .val span{font-size:11.5px;color:#5E5E5E;font-weight:700}
+.tf .val .z{background:#E2141B;border-color:#E2141B;color:#fff}
+.tf .val .z b,.tf .val .z span{color:#fff}
+/* book images: frame on outer box only, image keeps its ratio (no fixed height / cover / overflow hidden) */
+.tf .bkcard{position:relative;width:78%;max-width:300px;margin:0 auto;background:#fff;border-radius:18px;padding:8px;box-sizing:border-box;box-shadow:0 18px 40px rgba(0,0,0,.45),0 0 40px rgba(226,20,27,.35);animation:tfFl 4.2s ease-in-out infinite}
+.tf .fan3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin:30px 0 0}
+.tf .fan3>div{background:#fff;border-radius:10px;padding:4px;box-sizing:border-box;box-shadow:0 10px 22px rgba(0,0,0,.16)}
+.tf .cvw{width:92px;flex:none;background:#fff;border:1px solid #eee;border-radius:8px;padding:3px;box-sizing:border-box;box-shadow:4px 6px 0 rgba(0,0,0,.06)}
+/* who */
+.tf .who{display:flex;flex-direction:column;gap:8px;margin-top:20px;text-align:left}
+.tf .who div{background:#F4F2EE;border-radius:12px;padding:14px 16px 14px 46px;font-size:15px;font-weight:700;position:relative;line-height:1.5}
+.tf .who div:before{position:absolute;left:14px;top:13px;width:22px;height:22px;border-radius:50%;color:#fff;font-size:12px;font-weight:900;display:flex;align-items:center;justify-content:center}
+.tf .who.ok div:before{content:"✓";background:#22C26A}
+.tf .who.no div:before{content:"✕";background:#E2141B}
+/* price */
+.tf .price{position:relative;background:#fff;color:#141414;border-radius:22px;padding:28px 20px 22px;margin-top:30px;border:3px solid #141414;animation:tfRg 2.6s ease-in-out infinite}
+@keyframes tfRg{0%,100%{box-shadow:0 12px 30px rgba(0,0,0,.25)}50%{box-shadow:0 12px 30px rgba(0,0,0,.25),0 0 0 8px rgba(255,255,255,.25)}}
+.tf .price .pk2{font-size:13px;font-weight:800;color:#5E5E5E;line-height:1.5}
+.tf .price s{display:block;font-size:17px;color:#9A968F;margin-top:10px;text-decoration-color:#E2141B;text-decoration-thickness:2px}
+.tf .price .now{display:flex;align-items:center;justify-content:center;gap:8px;margin-top:4px}
+.tf .price .now span{background:#E2141B;color:#fff;font-size:15px;font-weight:900;padding:4px 10px;border-radius:999px;animation:tfPp 1.8s ease-in-out infinite}
+@keyframes tfPp{0%,100%{transform:scale(1)}50%{transform:scale(1.12)}}
+.tf .price .now b{font-size:48px;letter-spacing:-.05em;background:linear-gradient(90deg,#141414 0%,#141414 40%,#E2141B 50%,#141414 60%,#141414 100%);background-size:250% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:tfTx 3.6s linear infinite}
+@keyframes tfTx{0%{background-position:100% 0}100%{background-position:-150% 0}}
+.tf .price .sv{font-size:14px;font-weight:900;color:#E2141B;margin-top:4px}
+.tf .lad{margin-top:16px;display:flex;flex-direction:column;gap:6px;text-align:left}
+.tf .lad div{display:flex;justify-content:space-between;align-items:center;padding:12px 14px;border-radius:10px;background:#F4F2EE;font-size:14px;font-weight:800;color:#8F8B85}
+.tf .lad div i{font-style:normal;font-size:10.5px;font-weight:900;padding:2px 6px;border-radius:4px;background:#DDD9D3;color:#5E5E5E;margin-right:6px}
+.tf .lad .on{background:#E2141B;color:#fff;font-size:15.5px}
+.tf .lad .on i{background:#fff;color:#E2141B}
+.tf .inc{margin-top:14px;text-align:left;border-top:1.5px dashed #DDD9D3;padding-top:12px}
+.tf .inc li{font-size:13px;font-weight:700;padding:3px 0;color:#3A3A3A}
+.tf .inc li:before{content:"✓ ";color:#E2141B;font-weight:900}
+.tf .okbtn{margin:30px auto 6px;width:132px;height:132px;border-radius:50%;background:#E2141B;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#fff;font-weight:900;font-size:22px;line-height:1.2;animation:tfGw 2s ease-in-out infinite;border:4px solid #141414;outline:3px solid #FF6B70}
+@keyframes tfGw{0%,100%{box-shadow:0 0 0 8px rgba(226,20,27,.25),0 0 40px rgba(226,20,27,.6)}50%{box-shadow:0 0 0 16px rgba(226,20,27,.12),0 0 64px rgba(226,20,27,.9)}}
+.tf .okbtn small{font-size:12px;font-weight:800;opacity:.9}
+/* faq */
+.tf .faq{margin-top:24px;text-align:left}
+.tf .qa{padding:18px 0;border-top:1px solid #2E2E2E}
+.tf .qa:last-child{border-bottom:1px solid #2E2E2E}
+.tf .qa .q{font-size:16px;font-weight:900;color:#fff}
+.tf .qa .q:before{content:"Q ";color:#FF3B41}
+.tf .qa .a{font-size:14px;color:#A7A39D;margin-top:6px;line-height:1.7}
+.tf .qa .a:before{content:"A ";color:#FFD23F;font-weight:900}
+.tf .note{text-align:left;font-size:12.5px;color:#5E5E5E;line-height:1.75;margin-top:14px}
+.tf .note li{position:relative;padding-left:12px}
+.tf .note li:before{content:"·";position:absolute;left:0}
+.tf .cvbox{background:#fff;border-radius:20px;padding:8px;max-width:340px;margin:30px auto 0;animation:tfFl 4.2s ease-in-out infinite}
+.tf .cvbox img{border-radius:14px}
+.tf .emo{display:inline-block;font-size:92px;line-height:1;filter:drop-shadow(0 14px 18px rgba(0,0,0,.5));animation:tfWb 3.2s ease-in-out infinite;font-family:"Apple Color Emoji","Segoe UI Emoji","Noto Color Emoji",sans-serif}
+.tf .emo.sm{font-size:64px}
+@keyframes tfWb{0%,100%{transform:translateY(0) rotate(0)}25%{transform:translateY(-6px) rotate(-4deg)}75%{transform:translateY(-3px) rotate(4deg)}}
+.tf .emo.shk{animation:tfSk 2.4s ease-in-out infinite}
+@keyframes tfSk{0%,70%,100%{transform:none}74%{transform:translateX(-6px) rotate(-6deg)}78%{transform:translateX(6px) rotate(6deg)}82%{transform:translateX(-4px)}86%{transform:translateX(4px)}}
+.tf .siren{position:relative;background:#E2141B;color:#fff;padding:14px 10px;font-size:22px;font-weight:900;letter-spacing:-.02em;overflow:hidden;animation:tfSr 1s steps(1) infinite}
+@keyframes tfSr{50%{background:#0B0B0B;color:#FF2A31}}
+.tf .siren span{display:inline-block;animation:tfPp 1s ease-in-out infinite}
+.tf .rise{position:relative;height:250px;margin:30px auto 0;max-width:380px;display:flex;align-items:flex-end;justify-content:space-between;gap:14px;padding:0 4px}
+.tf .rise .bar{flex:1;position:relative;border-radius:10px 10px 4px 4px;transform-origin:bottom;transform:scaleY(.02);transition:transform 1s cubic-bezier(.2,.9,.3,1.15)}
+.tf .rise.in .bar{transform:none}
+.tf .rise.in .bar:nth-child(2){transition-delay:.5s}.tf .rise.in .bar:nth-child(3){transition-delay:1s}
+.tf .rise .bar.b1{height:42%;background:linear-gradient(#FF5A5F,#E2141B);box-shadow:0 0 30px rgba(226,20,27,.6)}
+.tf .rise .bar.b2{height:70%;background:repeating-linear-gradient(135deg,#3A3A3A 0 10px,#2A2A2A 10px 20px)}
+.tf .rise .bar.b3{height:100%;background:#5A5650}
+.tf .rise .bar b{position:absolute;top:-30px;left:0;right:0;font-size:15px;font-weight:900;white-space:nowrap}
+.tf .rise .bar.b1 b{color:#FF3B41;font-size:18px;top:-34px}
+.tf .rise .bub2{position:absolute;left:2px;top:22px;width:74px;height:74px;border-radius:50%;background:#FFD23F;color:#141414;font-weight:900;display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:20px;line-height:1.05;z-index:3;animation:tfPp 1.4s ease-in-out infinite}
+.tf .rise .bub2 small{font-size:11px}
+.tf .rise svg{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:2}
+.tf .rise svg path{stroke-dasharray:420;stroke-dashoffset:420;transition:stroke-dashoffset 1.6s ease 1.4s}
+.tf .rise.in svg path{stroke-dashoffset:0}
+.tf .rlab{display:flex;justify-content:space-between;max-width:380px;margin:10px auto 0;padding:0 4px;gap:14px}
+.tf .rlab span{flex:1;font-size:13px;font-weight:800;color:#B9B5AF}
+.tf .rlab span:first-child{color:#FF3B41}
+.tf .tick{display:inline-flex;align-items:center;gap:8px;margin-top:22px;background:#161616;border:1px solid #333;border-radius:12px;padding:10px 14px;font-family:'JetBrains Mono',monospace;font-weight:800;font-size:15px}
+.tf .tick .up{color:#FF3B41;animation:tfUp 1.2s ease-in-out infinite;display:inline-block}
+@keyframes tfUp{0%{transform:translateY(4px);opacity:.3}50%{transform:translateY(-4px);opacity:1}100%{transform:translateY(4px);opacity:.3}}
+.tf .ptr{font-size:60px;line-height:1;display:inline-block;animation:tfCh 1.2s ease-in-out infinite;margin-top:18px;font-family:"Apple Color Emoji","Segoe UI Emoji","Noto Color Emoji",sans-serif}
+.tf .siren{margin:0}
+
+
+/* ===== CSS animations (GIF 대체) ===== */
+.tf .an{position:relative;overflow:hidden;background:#0B0B0B;color:#fff;text-align:center}
+/* mail */
+.tf .an-mail{padding:26px 16px 22px;background:radial-gradient(circle at 50% 0,#3a0306,#0B0B0B 70%)}
+.tf .an-mail .tt{font-size:17px;font-weight:900;color:#ffb3b5}
+.tf .an-mail .tm{font-family:'JetBrains Mono',monospace;font-size:12px;color:#888;margin-top:2px}
+.tf .an-mail .ml{display:flex;gap:10px;align-items:center;text-align:left;background:#fff;color:#111;border:3px solid #E2141B;border-radius:14px;padding:10px 12px;margin-top:10px;opacity:0;animation:tfMl 4s ease-out infinite}
+.tf .an-mail .ml:nth-of-type(2){animation-delay:.15s}.tf .an-mail .ml:nth-of-type(3){animation-delay:.3s}
+.tf .an-mail .ml i{font-style:normal;width:36px;height:36px;border-radius:10px;background:#E2141B;color:#fff;font-size:19px;display:flex;align-items:center;justify-content:center;flex:none}
+.tf .an-mail .ml small{display:block;font-size:11px;color:#888}
+.tf .an-mail .ml b{display:block;font-size:14.5px;color:#E2141B;line-height:1.35}
+.tf .an-mail .ml span{display:block;font-size:11.5px;color:#444}
+.tf .an-mail .zz{font-size:52px;font-weight:900;letter-spacing:-.04em;color:#FF2A31;margin-top:14px;opacity:0;animation:tfZz 4s steps(1) infinite}
+@keyframes tfMl{0%{opacity:0;transform:translateY(-18px)}6%,92%{opacity:1;transform:none}8%{transform:translateX(-6px)}10%{transform:translateX(6px)}12%{transform:none}100%{opacity:0}}
+@keyframes tfZz{0%,14%{opacity:0}15%,92%{opacity:1}18%,24%{color:#fff}21%,27%{color:#FF2A31}100%{opacity:0}}
+/* gauge */
+.tf .an-gauge{padding:22px 16px 20px}
+.tf .an-gauge svg{width:100%;max-width:320px;height:auto;display:block;margin:0 auto}
+.tf .an-gauge .nd{transform-origin:200px 200px;animation:tfNd 3s cubic-bezier(.2,.9,.3,1) infinite}
+@keyframes tfNd{0%{transform:rotate(-90deg)}25%{transform:rotate(62deg)}30%{transform:rotate(56deg)}35%{transform:rotate(64deg)}40%{transform:rotate(58deg)}45%,90%{transform:rotate(62deg)}100%{transform:rotate(-90deg)}}
+.tf .an-gauge .gl{font-size:28px;font-weight:900;color:#FF2A31;margin-top:6px;animation:tfGl2 .6s steps(1) infinite}
+@keyframes tfGl2{50%{color:#fff}}
+/* bomb */
+.tf .an-bomb{padding:22px 16px 24px;height:300px}
+.tf .an-bomb .tt{font-size:16px;font-weight:900;color:#ffb3b5}
+.tf .an-bomb .led{display:inline-block;margin:16px auto 0;background:#170405;border:3px solid #4a0c0f;border-radius:18px;padding:16px 18px 10px;animation:tfShk 5s linear infinite}
+.tf .an-bomb .dg{font-family:'JetBrains Mono',ui-monospace,monospace;font-weight:800;font-size:50px;color:#FF2A31;line-height:50px;height:50px;white-space:nowrap;display:block}
+.tf .an-bomb .win{display:inline-block;height:50px;overflow:hidden;vertical-align:top}
+.tf .an-bomb .strip{display:flex;flex-direction:column;animation:tfCd 5s steps(1) infinite}
+.tf .an-bomb .strip span{height:50px;line-height:50px}
+@keyframes tfCd{0%{transform:translateY(0)}14%{transform:translateY(-50px)}28%{transform:translateY(-100px)}42%{transform:translateY(-150px)}56%{transform:translateY(-200px)}70%,100%{transform:translateY(-250px)}}
+@keyframes tfShk{0%,60%{transform:none}62%{transform:translateX(-4px)}64%{transform:translateX(4px)}66%{transform:translateX(-4px)}68%{transform:translateX(4px)}70%,100%{transform:none}}
+.tf .an-bomb .u{display:flex;justify-content:space-around;font-family:'JetBrains Mono',monospace;font-size:10px;color:#7E2B2E;letter-spacing:.2em;margin-top:6px}
+.tf .an-bomb .wr{display:flex;justify-content:center;gap:8px;margin-top:-2px}.tf .an-bomb .wr i{display:block;width:6px;height:34px}
+.tf .an-bomb .ft{font-size:17px;font-weight:900;margin-top:16px}
+.tf .an-bomb .boom{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;background:#0B0B0B;opacity:0;animation:tfBoom 5s steps(1) infinite}
+.tf .an-bomb .boom b{font-size:64px;font-weight:900;letter-spacing:-.05em;color:#FF2A31;line-height:1.1}
+.tf .an-bomb .boom span{font-size:16px;font-weight:900;margin-top:6px}
+.tf .an-bomb .boom em{font-style:normal;font-size:70px;line-height:1;font-family:"Apple Color Emoji","Segoe UI Emoji","Noto Color Emoji",sans-serif}
+@keyframes tfBoom{0%,69%{opacity:0;background:#0B0B0B}70%{opacity:1;background:#fff}72%{background:#FF2A31}75%,100%{opacity:1;background:#0B0B0B}}
+/* crash */
+.tf .an-crash{padding:18px 18px 16px;text-align:left;background:#0B0B0B}
+.tf .an-crash .h{display:flex;justify-content:space-between;font-size:12px;color:#999}
+.tf .an-crash .h i{font-style:normal;font-family:'JetBrains Mono',monospace;font-weight:800;animation:tfLv 4s steps(1) infinite}
+@keyframes tfLv{0%,49%{color:#3c3}50%,100%{color:#FF2A31}}
+.tf .an-crash .v{position:relative;height:50px;margin-top:4px}
+.tf .an-crash .v b{position:absolute;left:0;top:0;font-size:40px;font-weight:900;letter-spacing:-.04em;line-height:1.2;opacity:0}
+.tf .an-crash .v b:nth-child(1){color:#fff;animation:tfV1 4s steps(1) infinite}
+.tf .an-crash .v b:nth-child(2){color:#fff;animation:tfV2 4s steps(1) infinite}
+.tf .an-crash .v b:nth-child(3){color:#FF2A31;animation:tfV3 4s steps(1) infinite}
+.tf .an-crash .v b:nth-child(4){color:#FF2A31;animation:tfV4 4s steps(1) infinite}
+@keyframes tfV1{0%,19%{opacity:1}20%,100%{opacity:0}}
+@keyframes tfV2{0%,19%{opacity:0}20%,49%{opacity:1}50%,100%{opacity:0}}
+@keyframes tfV3{0%,49%{opacity:0}50%,64%{opacity:1}65%,100%{opacity:0}}
+@keyframes tfV4{0%,64%{opacity:0}65%,100%{opacity:1}}
+.tf .an-crash svg{width:100%;height:auto;display:block;margin-top:8px}
+.tf .an-crash .up{stroke-dasharray:400;stroke-dashoffset:400;animation:tfUpL 4s ease-out infinite}
+.tf .an-crash .dn{stroke-dasharray:260;stroke-dashoffset:260;animation:tfDnL 4s ease-in infinite}
+@keyframes tfUpL{0%{stroke-dashoffset:400}45%,100%{stroke-dashoffset:0}}
+@keyframes tfDnL{0%,49%{stroke-dashoffset:260}66%,100%{stroke-dashoffset:0}}
+.tf .an-crash .st{position:absolute;right:16px;bottom:16px;background:#FF2A31;color:#fff;font-weight:900;font-size:17px;padding:5px 12px;border-radius:8px;transform:rotate(-4deg);opacity:0;animation:tfV4 4s steps(1) infinite}
+/* domino */
+.tf .an-dom{padding:22px 10px 20px}
+.tf .an-dom .tt{font-size:17px;font-weight:900}
+.tf .an-dom .row{display:flex;justify-content:center;gap:8px;margin-top:18px}
+.tf .an-dom .row div{width:54px;height:76px;border-radius:10px;background:#222;border:2px solid #444;position:relative;transform-origin:bottom right;animation:tfDm 3s ease-in infinite}
+.tf .an-dom .row div:nth-child(2){animation-delay:.12s}.tf .an-dom .row div:nth-child(3){animation-delay:.24s}.tf .an-dom .row div:nth-child(4){animation-delay:.36s}.tf .an-dom .row div:nth-child(5){animation-delay:.48s}
+.tf .an-dom .row div:before{content:"";position:absolute;left:50%;top:16px;margin-left:-13px;width:26px;height:18px;border-radius:5px;background:#E2141B}
+.tf .an-dom .row div span{position:absolute;bottom:8px;left:0;right:0;font-family:'JetBrains Mono',monospace;font-size:9.5px;color:#aaa}
+.tf .an-dom .row div:after{content:"✕";position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:44px;font-weight:900;color:#FF2A31;opacity:0;animation:tfDx 3s steps(1) infinite;animation-delay:inherit}
+@keyframes tfDm{0%,10%{transform:none;border-color:#444}22%,85%{transform:rotate(24deg);border-color:#E2141B;opacity:.55}100%{transform:none;opacity:1}}
+@keyframes tfDx{0%,20%{opacity:0}21%,85%{opacity:1}86%,100%{opacity:0}}
+.tf .an-dom .ft{font-size:13.5px;color:#bbb;margin-top:16px}
+/* price */
+.tf .an-price{background:#0B0B0B;padding:0 14px 18px}
+.tf .an-price .sr{margin:0 -14px;padding:12px 6px;font-size:21px;font-weight:900;animation:tfSr2 1s steps(1) infinite;background:#E2141B}
+@keyframes tfSr2{50%{background:#0B0B0B;color:#FF2A31}}
+.tf .an-price .sub{font-size:13px;color:#bbb;margin-top:10px}
+.tf .an-price .ch{position:relative;height:200px;display:flex;align-items:flex-end;justify-content:space-between;gap:14px;margin:34px 6px 0}
+.tf .an-price .bar{flex:1;position:relative;border-radius:10px 10px 3px 3px;transform-origin:bottom;animation:tfBr 4s cubic-bezier(.2,.9,.3,1.1) infinite}
+.tf .an-price .bar.b1{height:40%;background:linear-gradient(#FF5A5F,#E2141B);box-shadow:0 0 28px rgba(226,20,27,.6)}
+.tf .an-price .bar.b2{height:68%;background:repeating-linear-gradient(135deg,#3a3a3a 0 10px,#2a2a2a 10px 20px);animation-delay:.25s}
+.tf .an-price .bar.b3{height:100%;background:#5a5650;animation-delay:.5s}
+.tf .an-price .bar b{position:absolute;left:-10px;right:-10px;top:-24px;font-size:14px;white-space:nowrap}
+.tf .an-price .bar.b1 b{color:#FF3B41;font-size:16px}
+@keyframes tfBr{0%{transform:scaleY(.03)}22%,92%{transform:scaleY(1)}100%{transform:scaleY(.03)}}
+.tf .an-price .bg{position:absolute;left:-2px;top:-30px;width:58px;height:58px;border-radius:50%;background:#FFD400;color:#141414;font-weight:900;display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:16px;line-height:1.05;z-index:2;animation:tfPp 1s ease-in-out infinite}
+.tf .an-price .bg small{font-size:10px}
+.tf .an-price .lb{display:flex;justify-content:space-between;gap:14px;margin:8px 6px 0}
+.tf .an-price .lb span{flex:1;font-size:12px;font-weight:700;color:#999}.tf .an-price .lb span:first-child{color:#FF5A5F}
+/* pointer */
+.tf .an-ptr{padding:16px 10px 10px;background:transparent}
+.tf .an-ptr .a{font-size:19px;font-weight:900;animation:tfGl3 1s steps(1) infinite}
+@keyframes tfGl3{50%{color:#FFD400}}
+.tf .an-ptr .f{font-size:56px;line-height:1;margin-top:8px;display:inline-block;animation:tfCh 1s ease-in-out infinite;font-family:"Apple Color Emoji","Segoe UI Emoji","Noto Color Emoji",sans-serif}
+
+
+/* ===== CSS book cover ===== */
+.tf .bkst{position:relative;padding:30px 0 34px;margin:26px -22px 0;background:radial-gradient(ellipse at 50% 45%,rgba(226,20,27,.55) 0,rgba(226,20,27,.12) 45%,transparent 70%)}
+.tf .bk3d{perspective:1100px;display:flex;justify-content:center}
+.tf .bkb{position:relative;width:290px;transform:rotateY(-14deg) rotateX(2deg);animation:tfBkf 5s ease-in-out infinite}
+@keyframes tfBkf{0%,100%{transform:rotateY(-14deg) rotateX(2deg) translateY(0)}50%{transform:rotateY(-10deg) rotateX(2deg) translateY(-8px)}}
+.tf .bcv{position:relative;background:#F7F6F4;border-radius:2px 6px 6px 2px;overflow:hidden;box-shadow:18px 26px 40px rgba(0,0,0,.6),0 0 0 1px rgba(0,0,0,.06);text-align:center;color:#141414;font-family:'Pretendard',-apple-system,'Apple SD Gothic Neo','Malgun Gothic','Noto Sans KR',sans-serif}
+.tf .bcv:before{content:"";position:absolute;left:0;top:0;bottom:0;width:14px;background:linear-gradient(90deg,#d9d7d3,#fff 45%,#e6e4e0 70%,#cfcdc8);z-index:2}
+.tf .bcv .top{padding:22px 18px 16px 30px}
+.tf .bcv .sr{font-size:7.5px;font-weight:800;letter-spacing:.14em;color:#333}
+.tf .bcv .sr span{letter-spacing:0;font-weight:600}
+.tf .bcv .ln{position:relative;margin:9px 0 0;height:16px}
+.tf .bcv .ln:before{content:"";position:absolute;left:0;right:0;top:50%;height:1px;background:#E2141B}
+.tf .bcv .ln b{position:relative;display:inline-block;background:#F7F6F4;border:1px solid #E2141B;color:#E2141B;font-size:8px;font-weight:900;padding:1px 9px;border-radius:999px;line-height:13px}
+.tf .bcv .yt{width:62px;height:46px;margin:18px auto 0;border-radius:14px;background:linear-gradient(180deg,#FF3B41,#C8101A);box-shadow:0 5px 0 #8F0A10,0 10px 18px rgba(226,20,27,.35);position:relative}
+.tf .bcv .yt:after{content:"";position:absolute;left:25px;top:13px;border-left:17px solid #fff;border-top:10px solid transparent;border-bottom:10px solid transparent}
+.tf .bcv .pill{display:inline-block;margin-top:20px;background:#E2141B;color:#fff;font-size:8.5px;font-weight:800;padding:4px 10px;border-radius:999px;letter-spacing:-.02em;white-space:nowrap}
+.tf .bcv .t1{white-space:nowrap;font-size:25px;font-weight:900;color:#E2141B;letter-spacing:-.05em;line-height:1.1;margin-top:8px}
+.tf .bcv .t2{font-size:18.5px;font-weight:900;letter-spacing:-.05em;line-height:1.2;margin-top:2px;white-space:nowrap}
+.tf .bcv .hr{height:1px;background:#E2141B;margin:10px 0 0}
+.tf .bcv .t3{font-size:11px;font-weight:700;line-height:1.45;margin-top:9px;color:#222}
+.tf .bcv .au{font-size:8.5px;font-weight:700;margin-top:7px;display:flex;align-items:center;justify-content:center;gap:4px}
+.tf .bcv .au i{font-style:normal;width:13px;height:13px;border-radius:50%;background:#141414;color:#fff;font-size:5.5px;font-weight:900;display:inline-flex;align-items:center;justify-content:center}
+.tf .bcv .bot{background:#E2141B;color:#fff;text-align:left;padding:16px 16px 16px 30px;position:relative}
+.tf .bcv .bot p{font-size:12.5px;font-weight:900;line-height:1.4;letter-spacing:-.02em}
+.tf .bcv .bot small{display:block;font-size:6.5px;font-weight:600;margin-top:10px;padding-bottom:4px;border-bottom:1px solid rgba(255,255,255,.7);width:66%;opacity:.95;white-space:nowrap}
+.tf .bcv .bot .pd{display:block;font-style:normal;font-size:6px;font-weight:600;margin-top:8px;opacity:.85}
+.tf .bcv .sig{position:absolute;right:14px;bottom:13px;text-align:right;transform:rotate(-8deg)}
+.tf .bcv .sig b{display:block;font-family:'Brush Script MT','Segoe Script','Snell Roundhand',cursive;font-style:italic;font-weight:400;font-size:19px;line-height:1}
+.tf .bcv .sig span{display:block;font-size:4.5px;letter-spacing:.2em;margin-top:3px}
+.tf .bkfl{width:230px;height:16px;margin:10px auto 0;border-radius:50%;background:radial-gradient(ellipse,rgba(0,0,0,.55),transparent 70%)}
+@media (max-width:350px){.tf .bkb{width:260px}.tf .bcv .t1{font-size:22px}.tf .bcv .t2{font-size:16.5px}}
+
+
+/* ===== author ===== */
+.tf .ath{background:radial-gradient(ellipse at 50% 0,#3A0709 0,#0B0B0B 55%);color:#fff;text-align:center}
+.tf .ath .aq{font-size:18px;font-weight:800;color:#9A958E;margin-top:16px}
+.tf .ath .apf{display:flex;align-items:center;gap:14px;justify-content:center;margin-top:16px;text-align:left}
+.tf .ath .aav{flex:none;width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,#FF3B41,#8F0A10);color:#fff;font-weight:900;font-size:22px;display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 3px #0B0B0B,0 0 0 5px #E2141B,0 0 24px rgba(226,20,27,.6)}
+.tf .ath .anm{font-size:22px;font-weight:900;line-height:1.2}
+.tf .ath .anm small{font-size:12px;color:#9A958E;font-weight:700;margin-left:4px}
+.tf .ath .arl{font-size:13.5px;color:#FFD400;font-weight:800;margin-top:4px}
+.tf .ath .ah{font-size:27px;font-weight:900;line-height:1.3;letter-spacing:-.04em;margin-top:28px}
+.tf .ath .ah span{color:#FF2A31}
+.tf .ath .ah2{font-size:20px;font-weight:800;line-height:1.45;margin-top:12px;color:#E9E5DF}
+.tf .ath .ah2 b{color:#fff;background:#E2141B;padding:0 6px}
+.tf .ath .ah3{font-size:15.5px;color:#9A958E;line-height:1.6;margin-top:14px;font-weight:600}
+.tf .ath .ah3 b{color:#FFD400}
+.tf .ath .aspec{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:24px;text-align:left}
+.tf .ath .aspec div{background:#161616;border:1px solid #3A1214;border-radius:14px;padding:14px 12px}
+.tf .ath .aspec em{font-style:normal;font-size:24px;display:block}
+.tf .ath .aspec p{font-size:14.5px;line-height:1.45;color:#C9C5BF;margin-top:6px;font-weight:600}
+.tf .ath .aspec small{display:block;font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.12em;color:#FF3B41;font-weight:800;margin-bottom:2px}
+.tf .ath .aspec b{color:#fff}
+.tf .ath .aq2{font-size:23px;font-weight:900;line-height:1.4;margin-top:36px}
+.tf .ath .aq2 span{display:block;color:#FF2A31}
+.tf .ath .achn{margin-top:18px;text-align:left;position:relative}
+.tf .ath .achn>div{display:flex;gap:12px;position:relative;padding-bottom:16px}
+.tf .ath .achn>div:not(:last-child):before{content:"";position:absolute;left:17px;top:36px;bottom:0;width:2px;background:linear-gradient(#E2141B,#3A1214)}
+.tf .ath .achn i{flex:none;width:36px;height:36px;border-radius:50%;background:#1A1A1A;border:2px solid #E2141B;color:#FF3B41;font-style:normal;font-weight:900;font-size:13px;display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace}
+.tf .ath .achn .ok i{background:#FFD400;border-color:#FFD400;color:#141414}
+.tf .ath .achn b{font-size:18px;font-weight:900;display:block;margin-top:6px}
+.tf .ath .achn .ok b{color:#FFD400}
+.tf .ath .achn p{font-size:15px;line-height:1.55;color:#C9C5BF;margin-top:4px}
+.tf .ath .achn u{text-decoration:none;color:#fff;font-weight:800;box-shadow:inset 0 -7px 0 rgba(226,20,27,.55)}
+.tf .ath .aqt{margin-top:18px;border-left:4px solid #E2141B;background:#141414;padding:18px 16px;text-align:left;font-size:20px;font-weight:800;line-height:1.5;border-radius:0 14px 14px 0}
+.tf .ath .aqt span{color:#fff;text-decoration:line-through;text-decoration-color:#FF2A31;text-decoration-thickness:3px}
+.tf .ath .aqt b{color:#FFD400}
+.tf .ath .ast{display:flex;gap:8px;margin-top:20px}
+.tf .ath .ast div{flex:1;background:#E2141B;border-radius:12px;padding:12px 4px}
+.tf .ath .ast b{display:block;font-size:26px;font-weight:900;line-height:1.1}
+.tf .ath .ast span{font-size:12px;font-weight:700;opacity:.95}
+.tf .ath .afin{font-size:22px;font-weight:900;line-height:1.45;margin-top:30px}
+.tf .ath .afin span{background:#FFD400;color:#141414;padding:0 6px}
+.tf .ath .anx{font-size:18px;color:#9A958E;margin-top:26px;line-height:1.5;font-weight:700}
+.tf .ath .anx b{color:#fff;font-size:21px}
+
+/* ===== wide ===== */
+.tf .wd{background:#F4F3F1;color:#141414;text-align:left}
+.tf .wd2{background:radial-gradient(ellipse at 80% 60%,#3A0709 0,#0B0B0B 60%);color:#fff;text-align:left}
+.tf .wk{font-size:16px;font-weight:700;color:#5E5E5E;line-height:1.5}
+.tf .wk b{color:#E2141B}
+.tf .wh{font-size:38px;font-weight:900;letter-spacing:-.05em;line-height:1.2;margin-top:10px}
+.tf .wh span{color:#FF2A31;text-shadow:0 0 22px rgba(255,42,49,.45)}
+.tf .wd .wh span{text-shadow:none;color:#E2141B}
+.tf .wtag{display:inline-block;background:#E2141B;color:#fff;font-size:15px;font-weight:900;padding:7px 14px;border-radius:10px}
+.tf .wq{font-size:12.5px;color:#9A958E;margin-top:12px;line-height:1.5}
+.tf .chp{display:flex;flex-wrap:wrap;gap:6px;margin-top:18px;align-items:center}
+.tf .chp b{font-size:13px;color:#5E5E5E;margin-right:2px}
+.tf .chp span{font-size:13px;font-weight:700;background:#E6E4E0;color:#333;border-radius:999px;padding:4px 11px}
+.tf .chp span.on{background:#E2141B;color:#fff}
+.tf .rvc{margin-top:20px;background:#fff;border:1px solid #E1DED9;border-radius:20px;padding:20px 20px 16px;box-shadow:0 10px 30px rgba(0,0,0,.08)}
+.tf .rvc .h{font-size:17px;font-weight:800;color:#333;display:flex;align-items:center;gap:8px}
+.tf .rvc .h i{width:28px;height:20px;border-radius:6px;background:#E2141B;position:relative;display:inline-block}
+.tf .rvc .h i:after{content:"";position:absolute;left:11px;top:5px;border-left:8px solid #fff;border-top:5px solid transparent;border-bottom:5px solid transparent}
+.tf .rvc .z{font-size:76px;font-weight:900;color:#E2141B;line-height:1.05;letter-spacing:-.04em;text-decoration:line-through;text-decoration-thickness:6px;margin-top:4px}
+.tf .rvc .st{display:inline-block;background:#FFE1E2;color:#E2141B;font-size:17px;font-weight:900;padding:6px 14px;border-radius:999px;margin-top:6px}
+.tf .rvc .ln{display:flex;justify-content:space-between;align-items:center;border-top:1px dashed #DDD;margin-top:16px;padding-top:12px;font-size:16px;color:#5E5E5E;font-weight:700}
+.tf .rvc .ln b{color:#E2141B;font-weight:900}
+.tf .rvc.in .z{animation:tfZp .6s cubic-bezier(.2,1.6,.4,1) both}
+.tf .rvc.in .ln b{animation:tfBlk 1s steps(2) .6s 3 both}
+@keyframes tfZp{0%{transform:scale(.4);opacity:0}100%{transform:none;opacity:1}}
+@keyframes tfBlk{0%{opacity:1}50%{opacity:.4}100%{opacity:1}}
+.tf .wb{font-size:21px;font-weight:900;line-height:1.5;margin-top:22px;color:#fff}
+.tf .wb .y{color:#FFD400}
+.tf .wb .r{color:#E2141B}
+.tf .chl{display:flex;flex-direction:column;gap:8px;margin-top:20px}
+.tf .chl div{display:flex;align-items:center;gap:10px;background:#1C1D21;border:1px solid #2E3036;border-radius:12px;padding:14px 16px;font-size:19px;font-weight:800;color:#D9D6D1}
+.tf .chl span{flex:1}
+.tf .chl em{font-style:normal;background:#E2141B;color:#fff;font-size:16px;font-weight:900;padding:3px 10px;border-radius:6px}
+.tf .chl b{color:#FF5A5F;font-size:20px;font-weight:900;text-decoration:line-through;min-width:44px;text-align:right}
+.tf .chl.in em,.tf .chl.in b{animation:tfStp .35s cubic-bezier(.2,1.8,.4,1) both;animation-delay:var(--d)}
+.tf .chl.in div b{animation-delay:calc(var(--d) + .12s)}
+@keyframes tfStp{0%{transform:scale(2.4);opacity:0}100%{transform:none;opacity:1}}
+.tf .gml{margin-top:22px}
+.tf .gm{display:inline-block;background:#E2141B;color:#fff;font-size:17px;font-weight:900;padding:7px 16px;border-radius:999px}
+.tf .gg{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;margin-top:12px}
+.tf .gg div{background:#1C1D21;border:1px solid #2E3036;border-radius:10px;padding:10px 2px;text-align:center}
+.tf .gg span{display:block;font-size:12.5px;color:#C9C5BF;font-weight:700;white-space:nowrap}
+.tf .gg b{display:block;font-size:18px;font-weight:900;color:#FF5A5F;margin-top:2px}
+.tf .gml.in .gg div{animation:tfTile .4s ease both;animation-delay:var(--d)}
+.tf .gml.in .gg b{animation:tfStp .3s cubic-bezier(.2,1.8,.4,1) both;animation-delay:calc(var(--d) + .15s)}
+@keyframes tfTile{0%{background:#1E3A28;border-color:#22C26A}70%{background:#1E3A28;border-color:#22C26A}100%{background:#1C1D21;border-color:#E2141B}}
+.tf .qz{display:flex;flex-direction:column;gap:8px;margin-top:20px}
+.tf .qz div{display:flex;align-items:center;justify-content:space-between;gap:8px;background:#1C1D21;border:1px solid #2E3036;border-radius:12px;padding:12px 14px}
+.tf .qz p{font-size:17px;font-weight:800;color:#E9E5DF;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.tf .qz code{font-family:inherit;font-size:16px;font-weight:900;color:#FFD400;border:1.5px dashed #B8962A;border-radius:6px;padding:4px 9px;letter-spacing:.12em;white-space:nowrap}
+.tf .qz b{flex:none;background:#E2141B;color:#fff;font-size:14px;font-weight:900;padding:5px 10px;border-radius:6px;white-space:nowrap}
+.tf .qz.in b{animation:tfStp .35s cubic-bezier(.2,1.8,.4,1) both;animation-delay:var(--d)}
+.tf .pdk{margin:28px -24px -68px;background:#E2141B;padding:16px 20px;display:flex;align-items:center;justify-content:space-between;gap:10px}
+.tf .pdk p{font-size:16px;font-weight:900;line-height:1.35;color:#fff}
+.tf .pdk p span{color:#FFD400}
+.tf .pdk small{display:block;font-size:12px;font-weight:700;opacity:.92}
+.tf .pdk b{flex:none;background:#fff;color:#E2141B;font-size:14px;font-weight:900;padding:8px 12px;border-radius:10px}
+.tf .pdb{position:absolute;left:0;top:-8px;z-index:5;width:96px;height:96px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#FFF27A,#FFD400 45%,#E0A800);border:3px solid #fff;box-shadow:0 0 0 4px rgba(255,212,0,.35),0 8px 20px rgba(0,0,0,.45);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;transform:rotate(-10deg);animation:tfPdb 1.6s ease-in-out infinite}
+.tf .pdb small{font-size:10px;font-weight:900;color:#141414;line-height:1.2}
+.tf .pdb b{font-size:23px;font-weight:900;color:#E2141B;line-height:1.1;letter-spacing:-.04em}
+@keyframes tfPdb{0%,100%{transform:rotate(-10deg) scale(1)}50%{transform:rotate(-10deg) scale(1.08)}}
+@media (max-width:400px){.tf .wh{font-size:33px}.tf .rvc .z{font-size:64px}.tf .gg span{font-size:11.5px}.tf .gg b{font-size:16px}.tf .chl div{font-size:17px}}
+.tf .wd2 .chp b{color:#9A958E}
+.tf .wd2 .chp span{background:#26272B;color:#D9D6D1}
+.tf .wd2 .chp span.on{background:#E2141B;color:#fff}
+.tf .wof{margin-top:26px;background:#fff;color:#141414;border-radius:16px;padding:20px 18px;border-left:6px solid #E2141B}
+.tf .wof .t{font-size:16px;font-weight:700;color:#5E5E5E;line-height:1.5}
+.tf .wof .t b{color:#141414}
+.tf .wof .q{font-size:22px;font-weight:900;line-height:1.4;margin-top:10px;color:#E2141B}
+.tf .wof .wsr{font-size:12.5px;color:#8A867F;margin-top:8px;font-weight:700}
+/* ===== v4 ===== */
+.tf .pro{margin-top:30px;background:#0B0B0B;color:#fff;border-radius:20px;padding:26px 20px 24px;text-align:left;border:2px solid #E2141B;box-shadow:0 0 34px rgba(226,20,27,.3)}
+.tf .pro .pt{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:800;letter-spacing:.1em;color:#FFD400}
+.tf .pro .h{font-size:25px;font-weight:900;letter-spacing:-.03em;margin-top:8px;line-height:1.35}
+.tf .pro .h b{color:#FF3B41}
+.tf .pro .d{font-size:16px;color:#C9C5BF;margin-top:8px;line-height:1.6;font-weight:600}
+.tf .pro .d b{color:#fff}
+.tf .pro .k{font-size:15px;color:#9A958E;font-weight:700;margin-top:12px}
+.tf .pro .pcr{display:flex;flex-direction:column;gap:8px;margin-top:16px}
+.tf .pro .pcr div{position:relative;background:linear-gradient(135deg,#2A0A0B,#160707);border:1px solid #E2141B;border-radius:12px;padding:12px 14px 12px 52px}
+.tf .pro .pcr em{position:absolute;left:14px;top:50%;transform:translateY(-50%);font-style:normal;font-size:24px}
+.tf .pro .pcr b{display:block;font-size:16.5px;font-weight:900;color:#fff}
+.tf .pro .pcr span{display:block;font-size:13.5px;color:#C9C5BF;line-height:1.45;margin-top:2px}
+.tf .pro .d2{margin-top:14px;font-size:19px;font-weight:900;color:#FFD400}
+.tf .pro .st3{margin-top:16px;display:flex;flex-direction:column;gap:8px}
+.tf .pro .st3 div{display:flex;gap:10px;align-items:flex-start;background:#1A1A1A;border:1px solid #2E2E2E;border-radius:12px;padding:12px;font-size:15px;line-height:1.5;color:#E9E5DF}
+.tf .pro .st3 span{flex:1;min-width:0;display:block}
+.tf .pro .st3 i{flex:none;font-style:normal;font-family:'JetBrains Mono',monospace;font-weight:800;color:#FF3B41;font-size:13px;margin-top:2px}
+.tf .pro .st3 b{color:#fff}
+.tf .pro .f{font-size:19px;font-weight:900;margin-top:18px;line-height:1.45}
+.tf .pro .f span{background:#E2141B;padding:0 6px}
+
+.tf .bkfx img,.tf .cvbox img{display:block;width:100%;height:auto}
+.tf .imm2 .imb{animation:tfImb 1s steps(1) infinite}
+@keyframes tfImb{50%{background:#fff;color:#E2141B}}
+.tf .day{display:flex;flex-direction:column;gap:12px;margin-top:24px;text-align:left}
+.tf .dy{display:flex;gap:12px;align-items:flex-start;background:#fff;border-radius:16px;padding:16px;border:2px solid #22C26A;color:#141414}
+.tf .dy .tm{font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:800;color:#fff;background:#22A35A;padding:3px 8px;border-radius:6px;flex:none;margin-top:2px}
+.tf .dy b{display:block;font-size:17px;line-height:1.45}
+.tf .dy span{display:block;font-size:13.5px;color:#5E5E5E;margin-top:3px;font-weight:600;line-height:1.55}
+.tf .sp{display:flex;flex-direction:column;gap:10px;margin-top:22px}
+.tf .sp div{background:#fff;border:1.5px solid #E7E3DD;border-radius:14px;padding:16px 18px;text-align:left}
+.tf .sp b{display:block;font-size:34px;font-weight:900;letter-spacing:-.04em;color:#E2141B;line-height:1.1}
+.tf .sp span{display:block;font-size:14px;font-weight:700;color:#3A3A3A;margin-top:4px}
+.tf .sp em{display:block;font-style:normal;font-size:11.5px;color:#8F8B85;margin-top:2px}
+.tf .rcmp{display:flex;flex-direction:column;gap:0;margin-top:24px;text-align:left}
+.tf .rcmp .g1{background:#F4F2EE;border-radius:16px;padding:18px}
+.tf .rcmp .g2{background:#141414;color:#fff;border-radius:16px;padding:18px;border:3px solid #E2141B}
+.tf .rcmp .h{font-size:13px;font-weight:900;color:#8F8B85}
+.tf .rcmp .g2 .h{color:#FF3B41}
+.tf .rcmp li{font-size:15.5px;font-weight:800;padding:6px 0 6px 24px;position:relative;line-height:1.45}
+.tf .rcmp .g1 li:before{content:"·";position:absolute;left:8px;color:#8F8B85}
+.tf .rcmp .g2 li:before{content:"+";position:absolute;left:4px;color:#22C26A;font-weight:900}
+.tf .rcmp .g2 li.base{color:#A7A39D}.tf .rcmp .g2 li.base:before{content:"✓";color:#8F8B85}
+.tf .rcmp .ar{text-align:center;font-size:15px;font-weight:900;color:#E2141B;padding:8px 0}
+.tf .roi{background:#141414;color:#fff;border-radius:20px;padding:24px 18px;margin-top:22px;text-align:left}
+.tf .roi .r{display:flex;flex-direction:column;gap:2px;padding:12px 0;border-top:1px solid #2E2E2E;font-size:14px;font-weight:700;color:#C9C5BF}
+.tf .roi .r:first-of-type{border-top:0}
+.tf .roi .r b{font-size:26px;font-weight:900;color:#fff;letter-spacing:-.03em}
+.tf .roi .r b.k{color:#FFD400}
+.tf .trust{display:flex;flex-direction:column;gap:10px;margin-top:24px;text-align:left}
+.tf .tr{display:flex;gap:14px;align-items:flex-start;background:#fff;color:#141414;border-radius:16px;padding:16px}
+.tf .tr em{font-style:normal;font-size:28px;line-height:1;font-family:"Apple Color Emoji","Segoe UI Emoji","Noto Color Emoji",sans-serif}
+.tf .tr b{display:block;font-size:17px;line-height:1.4}
+.tf .tr span{display:block;font-size:13.5px;color:#5E5E5E;margin-top:3px;font-weight:600;line-height:1.55}
+.tf .micro{display:flex;justify-content:center;align-items:center;gap:6px;flex-wrap:wrap;margin-top:18px}
+.tf .micro span{background:#1E1E1E;border:1px solid #333;border-radius:999px;padding:6px 11px;font-size:12.5px;font-weight:800;color:#E9E5DF}
+.tf .micro i{font-style:normal;color:#FF3B41;font-weight:900}
+.tf .ctaline{display:inline-block;margin-top:20px;background:#E2141B;color:#fff;font-size:19px;font-weight:900;padding:14px 20px;border-radius:14px;line-height:1.4;box-shadow:0 8px 0 #7A0710}
+
+.tf .must{margin:6px -22px 0;background:#fff;color:#141414;padding:30px 20px 32px;position:relative}
+.tf .must:before,.tf .must:after{content:"";position:absolute;left:0;right:0;height:10px;background:repeating-linear-gradient(135deg,#FFD400 0 14px,#141414 14px 28px)}
+.tf .must:before{top:0}.tf .must:after{bottom:0}
+.tf .must .a{font-size:20px;font-weight:800;color:#3A3A3A}
+.tf .must .a span{color:#E2141B;font-weight:900}
+.tf .must .b{font-size:31px;font-weight:900;line-height:1.3;letter-spacing:-.035em;margin-top:8px}
+.tf .must .b u{text-decoration:none;background:#E2141B;color:#fff;padding:0 8px;display:inline-block;animation:tfPp 1.6s ease-in-out infinite}
+
+.tf .ovs{display:flex;flex-direction:column;gap:12px;margin-top:22px;text-align:left}
+.tf .ov{background:#1A1A1A;border:1px solid #333;border-left:5px solid #E2141B;border-radius:12px;padding:16px 16px 14px}
+.tf .ov.off{border-left-color:#FFD400}
+.tf .ov .src{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:10.5px;font-weight:800;color:#8A867F;letter-spacing:0}
+.tf .ov .en{font-family:'JetBrains Mono',monospace;font-size:14.5px;line-height:1.55;color:#E9E5DF;margin-top:6px;letter-spacing:0}
+.tf .ov .en b{color:#FFD400}
+.tf .ov .ko{font-size:16.5px;font-weight:900;line-height:1.5;margin-top:8px;color:#fff}
+.tf .ov .ko span{background:#E2141B;padding:0 6px}
+.tf .ov .nt{font-size:12.5px;color:#8A867F;margin-top:6px}
+
+.tf .now2{margin:26px auto 0;max-width:440px;border:3px solid #E2141B;border-radius:18px;padding:24px 18px;background:#140203;box-shadow:0 0 40px rgba(226,20,27,.35)}
+.tf .now2 .a{font-size:18px;font-weight:800;color:#C9C5BF}.tf .now2 .a b{color:#FFD400}
+.tf .now2 .b{font-size:25px;font-weight:900;line-height:1.4;margin-top:6px}
+.tf .now2 .b span{background:#E2141B;padding:0 8px}
+.tf .now2 .c{font-size:17px;font-weight:800;color:#C9C5BF;margin-top:16px}
+.tf .now2 .d{font-size:28px;font-weight:900;margin-top:4px;letter-spacing:-.03em}
+.tf .now2 .d u{text-decoration-color:#FFD400;text-decoration-thickness:5px;text-underline-offset:6px;color:#FFD400}
+
+.tf .bn3{display:flex;gap:8px;margin-top:22px}
+.tf .bn3 div{flex:1;background:#fff;border:2px solid #E2141B;border-radius:14px;padding:14px 6px;display:flex;flex-direction:column;align-items:center;gap:4px}
+.tf .bn3 em{font-style:normal;font-size:30px;line-height:1;font-family:"Apple Color Emoji","Segoe UI Emoji","Noto Color Emoji",sans-serif}
+.tf .bn3 b{font-size:13.5px;color:#E2141B}
+.tf .bn3 span{font-size:12.5px;font-weight:800;line-height:1.4}
+
+.tf .hand{display:flex;align-items:center;gap:18px;margin:26px auto 0;max-width:420px;text-align:left}
+.tf .hand .ph{width:150px;flex:none;background:#fff;border:3px solid #141414;border-radius:20px;padding:12px 10px;box-shadow:0 14px 30px rgba(0,0,0,.15)}
+.tf .hand .ph .bar{height:8px;width:40%;background:#E7E3DD;border-radius:4px;margin:0 auto 10px}
+.tf .hand .row{display:flex;align-items:center;gap:6px;background:#F4F2EE;border-radius:8px;padding:7px 6px;margin-top:6px}
+.tf .hand .row i{font-style:normal;width:18px;height:18px;border-radius:50%;background:#141414;color:#fff;font-size:10px;font-weight:900;display:flex;align-items:center;justify-content:center;flex:none}
+.tf .hand .row span{flex:1;height:6px;background:#DDD9D3;border-radius:3px}
+.tf .hand .row.on{background:#FFF0F0;outline:2px solid #E2141B;animation:tfPp 1.4s ease-in-out infinite}
+.tf .hand .row.on i{background:#E2141B}
+.tf .hand .row.on span{height:auto;background:none;font-size:10.5px;font-weight:900;color:#E2141B}
+.tf .hand p{font-size:19px;font-weight:800;line-height:1.45}
+.tf .hand p b{color:#E2141B}
+.tf .tlx{margin-top:22px;text-align:left;border-left:3px solid #E2141B;padding-left:20px;display:flex;flex-direction:column;gap:14px}
+.tf .tlx>div{position:relative;background:#fff;border-radius:14px;padding:14px 16px;border:1.5px solid #E7E3DD}
+.tf .tlx>div:before{content:"";position:absolute;left:-29px;top:18px;width:14px;height:14px;border-radius:50%;background:#E2141B;border:3px solid #F4F2EE}
+.tf .tlx .tm{font-family:'JetBrains Mono',monospace;font-size:11.5px;font-weight:800;color:#E2141B}
+.tf .tlx b{display:block;font-size:16.5px;line-height:1.4;margin-top:3px}
+.tf .tlx p{font-size:13.5px;color:#5E5E5E;margin-top:3px;font-weight:600}
+.tf .tlx .lk2{background:#141414;border-color:#141414;color:#fff}
+.tf .tlx .lk2 p{color:#A7A39D}
+.tf .bigtm{margin:30px -24px -68px;background:#FFD400;color:#141414;padding:34px 22px 40px}
+.tf .bigtm .a{font-size:20px;font-weight:900}
+.tf .bigtm .b{font-size:27px;font-weight:900;line-height:1.4;margin-top:6px;letter-spacing:-.03em}
+.tf .bigtm .b span{background:#E2141B;color:#fff;padding:0 8px}
+.tf .ops{display:flex;flex-direction:column;gap:8px;margin-top:22px;text-align:left}
+.tf .ops div{display:flex;align-items:center;gap:12px;background:#1A1A1A;border:1px solid #2E2E2E;border-radius:12px;padding:14px 14px}
+.tf .ops em{font-style:normal;font-size:24px;line-height:1;font-family:"Apple Color Emoji","Segoe UI Emoji","Noto Color Emoji",sans-serif}
+.tf .ops b{font-size:16px;color:#fff}
+
+.tf .tqs{display:flex;flex-direction:column;gap:10px;margin-top:24px;text-align:left}
+.tf .tq{border-radius:14px;overflow:hidden;border:1px solid #333}
+.tf .tq .qq{background:#1E1E1E;padding:14px 16px;font-size:17px;font-weight:900;color:#fff;line-height:1.4}
+.tf .tq .qq span{display:block;font-family:'JetBrains Mono',monospace;font-size:11px;color:#8A867F;margin-bottom:4px}
+.tf .tq .aa{background:#fff;color:#141414;padding:11px 16px;font-size:14.5px;font-weight:800}
+.tf .tq.core{border:2px solid #E2141B;box-shadow:0 0 30px rgba(226,20,27,.4)}
+.tf .tq.core .qq{background:#E2141B}.tf .tq.core .qq span{color:#FFD9DA}
+
+.tf .pfx{display:flex;flex-direction:column;gap:10px;margin-top:20px;text-align:left}
+.tf .pfx>div{border-radius:14px;overflow:hidden;border:2px solid #141414}
+.tf .pfx .x{background:#F4F2EE;color:#9A968F;font-size:14.5px;font-weight:800;padding:10px 14px;text-decoration:line-through;text-decoration-color:#E2141B}
+.tf .pfx .o{background:#fff;color:#141414;font-size:16.5px;font-weight:800;padding:12px 14px;line-height:1.45}
+.tf .pfx .o b{color:#E2141B}
+.tf .srcbelt{display:flex;flex-wrap:wrap;justify-content:center;gap:6px;margin-top:24px}
+.tf .srcbelt span{font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:800;background:#141414;color:#fff;padding:4px 9px;border-radius:5px}
+.tf .srcbelt .r{background:#E2141B}.tf .srcbelt .m{background:#FFD400;color:#141414}
+
+.tf .line{width:2px;height:60px;background:linear-gradient(rgba(255,255,255,0),#fff);margin:28px auto 0;position:relative}
+.tf .line:after{content:"";position:absolute;bottom:-4px;left:-3px;width:8px;height:8px;border-radius:50%;background:#fff}
+.tf .nores{max-width:420px;margin:14px auto 0;background:#161616;border:1px dashed #555;border-radius:14px;padding:20px 16px}
+.tf .nores b{display:block;font-size:20px;color:#fff}
+.tf .nores span{display:block;font-size:14px;color:#8A867F;margin-top:4px}
+.tf .eurx{display:inline-block;margin-top:16px;font-size:58px;font-weight:900;letter-spacing:-.04em;color:#141414;background:#FFD400;padding:2px 22px;border-radius:14px;transform:rotate(-3deg);box-shadow:0 10px 0 #141414;animation:tfPp 1.6s ease-in-out infinite}
+.tf .cx{display:flex;flex-direction:column;gap:10px;margin-top:26px;text-align:left}
+.tf .ci{background:#1A0405;border:2px solid #4A0C0F;border-radius:16px;padding:18px 18px 16px;position:relative;overflow:hidden}
+.tf .ci .l{font-size:14.5px;font-weight:800;color:#E2C9CA}
+.tf .ci .v{font-size:40px;font-weight:900;letter-spacing:-.05em;color:#FF2A31;line-height:1.15;margin-top:4px;position:relative;display:inline-block}
+.tf .ci .v:after{content:"";position:absolute;left:-4px;right:-4px;top:54%;height:5px;background:#fff;transform:scaleX(0);transform-origin:left;transition:transform .6s ease .5s}
+.tf .ci.in .v:after{transform:scaleX(1)}
+.tf .ci .d{font-size:13px;color:#A7A39D;margin-top:4px;font-weight:600}
+.tf .cvs{width:64px;height:64px;border-radius:50%;background:#FFD400;color:#141414;font-weight:900;font-size:24px;display:flex;align-items:center;justify-content:center;margin:18px auto;animation:tfPp 1.4s ease-in-out infinite}
+.tf .cwin{background:#fff;color:#141414;border-radius:20px;padding:26px 20px 22px;border:4px solid #E2141B;position:relative;box-shadow:0 0 40px rgba(226,20,27,.45)}
+.tf .cwin .st{position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:#E2141B;color:#fff;font-size:13px;font-weight:900;padding:5px 12px;border-radius:999px;white-space:nowrap}
+.tf .cwin .l{font-size:18px;font-weight:900;margin-top:4px}
+.tf .cwin .v{font-size:60px;font-weight:900;letter-spacing:-.05em;color:#E2141B;line-height:1.1}
+.tf .cwin .v small{font-size:26px;color:#141414}
+.tf .cwin .d{font-size:13.5px;color:#5E5E5E;font-weight:700;margin-top:4px}
+.tf .when{margin:40px -24px -64px;background:#0B0B0B;padding:44px 22px 52px;border-top:3px solid #E2141B}
+.tf .when .a{font-size:20px;font-weight:800;color:#C9C5BF}
+.tf .when .b{font-size:32px;font-weight:900;letter-spacing:-.04em;margin-top:6px;line-height:1.3}
+.tf .when .b span{background:#FFD400;color:#141414;padding:0 8px}
+.tf .tl2{display:flex;flex-direction:column;gap:0;margin-top:24px;max-width:400px;margin-left:auto;margin-right:auto}
+.tf .tl2 .vsm{width:48px;height:48px;border-radius:50%;background:#FFD400;color:#141414;font-weight:900;font-size:17px;display:flex;align-items:center;justify-content:center;margin:-8px auto;position:relative;z-index:2}
+.tf .tl2 div{border-radius:16px;padding:20px 16px}
+.tf .tl2 b{display:block;font-size:16px}
+.tf .tl2 span{display:block;font-size:28px;font-weight:900;margin-top:4px;line-height:1.3;letter-spacing:-.03em}
+.tf .tl2 .n1{background:#fff;color:#141414}.tf .tl2 .n1 span{color:#22A35A}
+.tf .tl2 .n2{background:#E2141B;color:#fff;animation:tfGl 2.4s ease-in-out infinite}
+.tf .when .c{font-size:24px;font-weight:900;line-height:1.45;margin-top:26px}
+.tf .when .c span{color:#FF2A31}
+.tf .ben>div{display:flex;gap:14px;align-items:flex-start;background:#fff;color:#141414;border-radius:14px;padding:16px}
+.tf .ben>div>div{display:block}
+
+.tf .myth{display:flex;flex-direction:column;gap:10px;max-width:420px;margin-left:auto;margin-right:auto;text-align:left}
+.tf .myth div{border-radius:4px 14px 14px 14px;padding:12px 14px;font-size:15px;font-weight:700;line-height:1.5}
+.tf .myth div small{display:block;font-size:11px;margin-bottom:3px;font-weight:800}
+}) center/100% auto no-repeat}
+.tf .imm{background:#FFD400;color:#141414;font-weight:900;font-size:15px;padding:11px 10px;text-align:center;letter-spacing:-.01em;position:relative;overflow:hidden}
+.tf .imm b{display:inline-block;background:#E2141B;color:#fff;padding:1px 8px;border-radius:4px;margin-right:6px;animation:tfBl 1s steps(1) infinite}
+.tf .fear{font-size:34px;font-weight:900;letter-spacing:-.04em;line-height:1.3;margin-top:22px}
+.tf .fear .k{color:#FF2A31}
+.tf .hband2{background:#E2141B;margin:34px -22px 0;padding:40px 22px 44px}
+.tf .hband2 .a{font-size:21px;font-weight:800;color:#FFE1E2;line-height:1.5}
+.tf .hband2 .b{font-size:32px;font-weight:900;line-height:1.3;letter-spacing:-.03em;margin-top:6px}
+.tf .hband2 .b u{text-decoration-thickness:5px;text-underline-offset:7px;text-decoration-color:#FFD400}
+.tf .hband2 .c{margin-top:22px;background:#0B0B0B;border-radius:16px;padding:22px 16px;font-size:23px;font-weight:900;line-height:1.5;color:#fff;letter-spacing:-.03em}
+.tf .hband2 .c span{color:#FFD400;font-size:1.15em}
+.tf .hband2 .d{display:inline-block;margin-top:14px;background:#fff;color:#E2141B;font-size:24px;font-weight:900;padding:8px 16px;border-radius:8px;animation:tfPp .55s ease-in-out infinite,tfDflash .55s steps(1) infinite}
+@keyframes tfDflash{50%{background:#FFD400;color:#141414}}
+.tf .closing{display:inline-block;margin-top:16px;background:#FFD400;color:#141414;font-weight:900;font-size:19px;padding:8px 18px;border-radius:999px;animation:tfPp 1.4s ease-in-out infinite}
+
+.tf .gif{display:block;width:100%;height:auto}
+.tf .gifr{border-radius:16px;overflow:hidden;margin:26px auto 0;box-shadow:0 0 0 2px #2A2A2A,0 18px 40px rgba(0,0,0,.5)}
+.tf .gifr.redg{box-shadow:0 0 0 2px #E2141B,0 0 50px rgba(226,20,27,.45)}
+.tf .flash{animation:tfFlash 1s steps(1) infinite}
+@keyframes tfFlash{50%{color:#FFD400}}
+.tf .vsx{display:flex;flex-direction:column;gap:22px;margin-top:28px;text-align:left}
+.tf .vq{display:inline-block;background:#141414;color:#fff;font-size:17px;font-weight:900;padding:8px 16px;border-radius:999px;margin-bottom:10px}
+.tf .vbad{background:#FFF0F0;border:3px solid #E2141B;border-radius:16px;padding:16px 18px;position:relative}
+.tf .vbad:before{content:"✕ 모르고 시작하면";display:block;font-size:12.5px;font-weight:900;color:#fff;background:#E2141B;padding:3px 9px;border-radius:4px;width:max-content;margin-bottom:8px}
+.tf .vbad p{font-size:19px;font-weight:900;color:#B10D13;line-height:1.45}
+.tf .vdown{text-align:center;font-size:26px;color:#141414;line-height:1;margin:6px 0;animation:tfCh 1.2s ease-in-out infinite}
+.tf .vgood{background:#141414;border:3px solid #22C26A;border-radius:16px;padding:16px 18px;box-shadow:0 0 30px rgba(34,194,106,.25)}
+.tf .vgood:before{content:"✓ 이 책대로 시작하면";display:block;font-size:12.5px;font-weight:900;color:#141414;background:#22C26A;padding:3px 9px;border-radius:4px;width:max-content;margin-bottom:8px}
+.tf .vgood p{font-size:19px;font-weight:900;color:#fff;line-height:1.45}
+.tf .huge{background:#E2141B;color:#fff;margin:40px -24px -68px;padding:46px 24px 54px;position:relative;overflow:hidden}
+.tf .huge:before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(135deg,transparent 0 22px,rgba(0,0,0,.08) 22px 44px)}
+.tf .huge>*{position:relative}
+.tf .huge .a{font-size:20px;font-weight:800;color:#FFDCDD}
+.tf .huge .b{font-size:46px;font-weight:900;letter-spacing:-.05em;line-height:1.15;margin-top:8px;text-shadow:0 4px 0 rgba(0,0,0,.18)}
+.tf .huge .b span{display:inline-block;background:#fff;color:#E2141B;padding:0 10px;margin:4px 0;animation:tfPp 1.6s ease-in-out infinite}
+.tf .huge .c{font-size:26px;font-weight:900;margin-top:6px}
+.tf .hrsx{background:#141414;color:#fff;margin:36px -24px -68px;padding:46px 24px 56px}
+.tf .hrsx .n{font-size:72px;font-weight:900;letter-spacing:-.05em;line-height:1;color:#FF2A31}
+.tf .hrsx .n small{font-size:30px;color:#fff}
+.tf .hrsx .x{font-size:24px;font-weight:900;margin-top:14px;line-height:1.4}
+.tf .hrsx .x span{background:#FFD400;color:#141414;padding:0 8px}
+.tf .sec{display:flex;flex-direction:column;gap:12px;margin-top:28px;text-align:left}
+.tf .sc{background:#161616;border:1px solid #2E2E2E;border-radius:16px;padding:18px 18px 16px;position:relative;overflow:hidden}
+.tf .sc .no{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:800;color:#FFD400}
+.tf .sc b{display:block;font-size:18px;line-height:1.45;margin-top:4px;color:#fff}
+.tf .sc b .k{color:#FF3B41}
+.tf .sc p{font-size:14px;color:#A7A39D;margin-top:6px;line-height:1.6}
+.tf .sc .lk{margin-top:10px;display:flex;align-items:center;gap:8px;font-size:13px;font-weight:800;color:#fff;background:#E2141B;border-radius:8px;padding:8px 10px}
+.tf .sc .lk i{font-style:normal;filter:blur(4px);color:#FFD9DA;font-weight:600;user-select:none}
+.tf .ben{display:flex;flex-direction:column;gap:10px;margin-top:26px;text-align:left}
+
+.tf .ben div em{font-style:normal;font-size:30px;line-height:1;font-family:"Apple Color Emoji","Segoe UI Emoji","Noto Color Emoji",sans-serif}
+.tf .ben b{display:block;font-size:17px;line-height:1.4}
+.tf .ben span{display:block;font-size:13.5px;color:#5E5E5E;margin-top:3px;font-weight:600;line-height:1.55}
+.tf .diag{display:flex;flex-direction:column;gap:8px;margin-top:24px;text-align:left}
+.tf .diag div{display:flex;gap:12px;align-items:center;background:#161616;border:1px solid #2E2E2E;border-radius:12px;padding:13px 14px;font-size:15px;font-weight:700;color:#E9E5DF}
+.tf .diag div i{font-style:normal;width:24px;height:24px;border-radius:6px;border:2px solid #FF3B41;flex:none;position:relative}
+.tf .diag.in div i{background:#E2141B}
+.tf .diag.in div i:after{content:"";position:absolute;left:6px;top:1px;width:6px;height:12px;border:solid #fff;border-width:0 3px 3px 0;transform:rotate(45deg)}
+.tf .diag div:nth-child(2) i{transition-delay:.2s}
+.tf .fut{display:flex;flex-direction:column;gap:14px;margin-top:26px;text-align:left}
+.tf .fut>div{border-radius:18px;padding:20px 18px}
+.tf .fut .b1{background:#1A0405;border:2px solid #E2141B}
+.tf .fut .b2{background:#fff;color:#141414;border:2px solid #22C26A}
+.tf .fut .h{font-size:13px;font-weight:900;padding:3px 10px;border-radius:999px;display:inline-block}
+.tf .fut .b1 .h{background:#E2141B;color:#fff}.tf .fut .b2 .h{background:#22C26A;color:#fff}
+.tf .fut h4{font-size:21px;font-weight:900;margin:10px 0 8px;line-height:1.35}
+.tf .fut li{font-size:14.5px;padding:4px 0 4px 18px;position:relative;line-height:1.55}
+.tf .fut .b1 li{color:#E2C9CA}.tf .fut .b2 li{color:#3A3A3A;font-weight:600}
+.tf .fut li:before{content:"·";position:absolute;left:4px;font-weight:900}
+.tf .bigend{font-size:38px;font-weight:900;letter-spacing:-.04em;line-height:1.25}
+.tf .bigend .k{color:#FF2A31}
+@media (max-width:400px){.tf .t0{font-size:44px}.tf .t1{font-size:29px}.tf .t2{font-size:25px}.tf .zero{font-size:86px}.tf .vol{font-size:100px}.tf .led .d{font-size:46px}.tf .steps{grid-template-columns:1fr 1fr}.tf .price .now b{font-size:42px}}
+@media (prefers-reduced-motion:reduce){.tf *{animation:none!important;transition:none!important}.tf.js .rv{opacity:1;transform:none}}
+</style>
+<div class="tf" id="tfRoot">
+
+<!-- RIBBON -->
+<div class="rib"><div class="rtr"><span class="it"><i class="dot"></i><em>EARLY BIRD</em></span><span class="it"><s>399,000원</s><b>27,900원</b><small>-93%</small></span><span class="it"><i class="dot"></i><em>EARLY BIRD</em></span><span class="it"><s>399,000원</s><b>27,900원</b><small>-93%</small></span><span class="it"><i class="dot"></i><em>EARLY BIRD</em></span><span class="it"><s>399,000원</s><b>27,900원</b><small>-93%</small></span></div></div>
+
+<!-- HERO -->
+<div class="hero">
+  <span class="warn" style="flex-direction:column;gap:2px;border-radius:16px;padding:12px 26px;line-height:1.3"><span style="font-size:24px">⚠ 경고</span><span>쇼츠·롱폼 수익화를 꿈꾸는 분께</span></span>
+  <p class="fear">어느 날,<br>메일 한 통이 도착합니다.</p>
+  <p class="fear" style="margin-top:8px">채널 3개의 수익이<br><span class="k">동시에 0원</span>이 됩니다.</p>
+  <div class="gifr redg" style="margin-top:22px"><div class="an an-mail" role="img" aria-label="예시: 채널 A, B, C 수익 창출 중지 메일이 연달아 오고 수익 0원이 되는 화면"><p class="tt">어느 날, 메일 한 통이 도착합니다</p><p class="tm">12:09 AM</p><div class="ml"><i>✉</i><div><small>받은편지함 · 쇼츠 채널</small><b>[채널 A] 수익 창출이 중지되었습니다</b><span>관련 계정에도 영향을 줄 수 있습니다</span></div></div><div class="ml"><i>✉</i><div><small>받은편지함 · 롱폼 채널</small><b>[채널 B] 수익 창출이 중지되었습니다</b><span>관련 계정에도 영향을 줄 수 있습니다</span></div></div><div class="ml"><i>✉</i><div><small>받은편지함 · AI 영상 채널</small><b>[채널 C] 수익 창출이 중지되었습니다</b><span>관련 계정에도 영향을 줄 수 있습니다</span></div></div><p class="zz">수익 0원</p></div></div>
+  <p class="sm" style="margin-top:10px;color:#77736E">※ 이해를 돕기 위해 재구성한 예시 화면입니다.</p>
+  <p class="fear" style="font-size:26px;margin-top:26px">이건 남의 이야기가 아닙니다.<br><span class="k">이 책 저자에게 실제로</span> 일어난 일입니다.</p>
+  <div class="now2">
+    <p class="a">그리고 <b>지금 이 순간에도</b></p>
+    <p class="b">국내와 해외의 유튜버들이<br><span>이 메일을 받고 있습니다.</span></p>
+    <p class="c">이유는 단 하나,</p>
+    <p class="d">바로 <u>이것</u>을 몰랐기 때문입니다.</p>
+  </div>
+  <div class="gap2"></div>
+  <div class="must">
+    <p class="a">당신이 유튜브로 <span>수익화</span>를 원한다면,</p>
+    <p class="b">그 전에 이것부터<br><u>반드시</u> 읽어야 합니다.</p>
+  </div>
+  <p class="t0"><span class="nw" style="font-size:.5em;color:#FFD400">당신의</span><span class="nw">수백만~수천만 원을</span><span class="k">아껴 주는 책</span></p>
+  <div class="bkst"><div class="pdb"><small>유튜브·쇼츠<br>시작 전</small><b>필독서</b></div><div class="bkcard"><img src="https://cdn.jsdelivr.net/gh/lawmoses/file@ba9b6f09bca8ccfd53cf7fead1476559b0255e55/detail/threads/yt-book-main.jpg" alt="유튜브·쇼츠 시작 전, 아무도 가르쳐 주지 않는 것들 · 본편 + 리뷰 특전 3권 4권 패키지 책 표지" width="1000" height="1325" fetchpriority="high" decoding="async" style="display:block;width:100%;max-width:100%;height:auto;margin:0 auto;object-fit:contain" onerror="this.onerror=null;this.src=this.src.replace('cdn.jsdelivr.net/gh/lawmoses/file@','raw.githubusercontent.com/lawmoses/file/')"></div></div>
+  <div class="hband2">
+    <p class="a">쇼츠든 롱폼이든, 수익화를 꿈꾸는 당신은</p>
+    <p class="b">이 책을 읽기 <u>전</u>과 <u>후</u>로<br>나뉠 것입니다.</p>
+    <div class="c">당신이 벌게 될 <span>수백만 원, 수천만 원</span>을<br>허무하게 날리지 않는 법.</div>
+    <p style="font-size:17px;font-weight:800;color:#FFE1E2;margin-top:18px">이걸 가르쳐 주는 책은</p>
+    <span class="d" style="margin-top:6px">국내에 단 한 권도 없었습니다</span>
+  </div>
+</div>
+
+<!-- ATTENTION -->
+<div class="s w">
+  <p class="t1 rv"><span class="k">주목!</span></p>
+  <p class="t3 rv" style="margin-top:4px">지금 이런 생각 하고 계신가요?</p>
+  <div class="srch rv"><span class="q">⌕</span> 유튜브 수익화 하는 법<span class="cur"></span></div>
+  <div class="rel rv">연관검색어 <span>쇼츠 수익</span><span>채널 여러 개</span><span>AI 영상</span></div>
+  <div class="bubs">
+    <div class="bub l rv">쇼츠로 월 천만 원 번다던데,<br>나도 <b>채널 여러 개</b> 돌려 볼까?<em>🤔</em></div>
+    <div class="bub r rv">계정은 그냥 쓰던 Gmail로<br>만들면 되겠지?<em>😌</em></div>
+    <div class="bub l rv">수익 정지? 연좌제?<br>그건 <b>나랑 먼 얘기</b> 같은데…<em>🙄</em></div>
+  </div>
+  <span class="chev"></span>
+</div>
+
+<!-- WIDE (모든 채널 해당) -->
+<div class="s wd2">
+  <span class="wtag rv">⚠ 쇼츠·롱폼 · 주제 상관없이</span>
+  <p class="wh rv">채널 10개 만들어도<br>이거 모르면 <span>전부 0원</span></p>
+  <div class="chp rv"><b>모두 해당</b><span>쇼츠</span><span>롱폼</span><span>시니어</span><span>플리</span><span>AI</span><span>정보</span><span>썰·사연</span><span>브이로그</span><span>먹방</span><span>리뷰</span><span>게임</span><span>요리</span><span>재테크</span><span>뷰티</span><span>육아</span><span>반려동물</span><span>여행</span><span>교육</span><span class="on">모든 채널</span></div>
+  <div class="gml rv"><p class="gm">✉ 쓰던 Gmail 하나</p><div class="gg"><div style="--d:0.00s"><span>쇼츠</span><b>₩0</b></div><div style="--d:0.12s"><span>롱폼</span><b>₩0</b></div><div style="--d:0.24s"><span>시니어</span><b>₩0</b></div><div style="--d:0.36s"><span>플리</span><b>₩0</b></div><div style="--d:0.48s"><span>AI</span><b>₩0</b></div><div style="--d:0.60s"><span>정보</span><b>₩0</b></div><div style="--d:0.72s"><span>썰·사연</span><b>₩0</b></div><div style="--d:0.84s"><span>먹방</span><b>₩0</b></div><div style="--d:0.96s"><span>리뷰</span><b>₩0</b></div><div style="--d:1.08s"><span>재테크</span><b>₩0</b></div></div></div>
+  <p class="wb rv">하나만 걸려도<br><span class="y">줄줄이</span> 멈출 수 있습니다.</p>
+  <div class="wof rv">
+    <p class="t">겁주려는 말이 아닙니다.<br><b>유튜브 공식 도움말</b>에 적힌 경고입니다.</p>
+    <p class="q">“관련된 모든 계정의<br>수익화 정지로 이어질 수 있다”</p>
+    <p class="wsr">YouTube 고객센터</p>
+  </div>
+</div>
+
+<!-- DIAGNOSIS -->
+<div class="s bk">
+  <span class="tag rv" style="font-size:20px;padding:9px 18px">🚨 30초 위험 자가진단</span>
+  <p class="t0 rv" style="margin-top:20px;font-size:44px">내 채널은 지금<br><span class="k">얼마나<br>위험할까?</span></p>
+  <div class="diag rv">
+    <div><i></i>채널을 내 개인 Gmail 계정으로 만들었다</div>
+    <div><i></i>채널 계정을 만들 때 내 개인 정보를 그대로 넣었다</div>
+    <div><i></i>한 계정 안에 채널을 여러 개 만들었다(또는 만들 생각이다)</div>
+    <div><i></i>정지되면 “새 계정 만들면 된다”고 생각한다</div>
+  </div>
+  <p class="t1 rv" style="margin-top:26px">하나라도 <span class="rb">체크</span>했다면,</p>
+  <div class="gifr redg rv"><div class="an an-gauge" role="img" aria-label="위험도 게이지: 위험 단계"><svg viewBox="0 0 400 230"><path d="M40 200 A160 160 0 0 1 120 61" stroke="#22C26A" stroke-width="34" fill="none"/><path d="M120 61 A160 160 0 0 1 280 61" stroke="#FFD400" stroke-width="34" fill="none"/><path d="M280 61 A160 160 0 0 1 360 200" stroke="#E2141B" stroke-width="34" fill="none"/><g class="nd"><path d="M194 200 L200 56 L206 200Z" fill="#fff"/></g><circle cx="200" cy="200" r="16" fill="#fff"/><text x="58" y="226" fill="#22C26A" font-size="16" font-weight="900">안전</text><text x="312" y="226" fill="#E2141B" font-size="16" font-weight="900">위험</text></svg><p class="gl">⚠ 위험 단계</p></div></div>
+  <p class="t2 rv" style="margin-top:26px">당신의 채널은 지금<br><span class="rb">수익 0원 시한폭탄</span> 위에 있습니다.</p>
+  <span class="chev"></span>
+</div>
+
+<!-- OPPORTUNITY -->
+<div class="s gy">
+  <span class="tag d rv">OPPORTUNITY</span>
+  <p class="t1 rv" style="margin-top:16px">맞습니다.<br>유튜브는 <span class="k">기회의 땅</span>입니다.</p>
+  <p class="lead rv" style="margin-top:14px">실제로 이만큼 벌었다고<br>직접 공개한 분들이 있어요.</p>
+  <div class="cases rv">
+    <div class="case"><div class="a">월 1억 원 수익</div><div class="b">쇼츠 운영자 · 한 달 최고 기록</div></div>
+    <div class="case"><div class="a">월 3~6천만 원 수익</div><div class="b">쇼츠 채널 3개 합계</div></div>
+    <div class="case"><div class="a">월 1,700만 원 수익</div><div class="b">실버롱폼 시작 10개월 차 · 실버버튼 3개</div></div>
+    <div class="case"><div class="a">월 4,000만 원 수익</div><div class="b">일본 시청자 대상 해외 쇼츠</div></div>
+  </div>
+  <p class="sm rv" style="margin-top:18px">※ 운영자가 직접 공개한 금액(이름 가림)이며 같은 수익을 약속하지는 않습니다.<br>근거: 책 속 출처 R104~R119</p>
+  <div class="gap2"></div>
+  <p class="t3 rv">그래서 지금, 너도나도 유튜브를 시작합니다.</p>
+  <div class="sp">
+    <div class="rv"><b>48.4%</b><span>“지금 부업을 하고 있다”고 답한 직장인</span><em>2025년 11월 성인 728명 조사 · 책 속 출처 R39</em></div>
+    <div class="rv"><b>부업 1위</b><span>실제로 하는 부업 1위 ‘블로그·유튜브 등 SNS’</span><em>2024년 근로자 1,327명 조사 · 책 속 출처 R38</em></div>
+  </div>
+  <p class="t2 rv" style="margin-top:26px">그런데 <span class="k">수익을 지키는 법</span>을<br>아는 사람은 거의 없습니다.</p>
+  <div class="gap"></div>
+  <p class="t3 rv">하지만 이렇게 큰 수익도,</p>
+  <p class="t2 rv" style="margin-top:6px"><span class="k">하루아침에 0원</span>이 될 수 있습니다.</p>
+  <p class="t3 rv" style="margin-top:22px">처음부터 제대로 설계된<br><span class="mk">방어막</span>이 없다면요.</p>
+  <p class="t2 rv" style="margin-top:22px">방어막 없이 쌓은 수익은<br><span class="rb">언제 터질지 모르는</span><br><span class="k">수익 0원 폭탄</span>입니다.</p>
+  <span class="chev"></span>
+</div>
+
+<!-- TIME BOMB -->
+<div class="s bk" style="padding-top:76px;padding-bottom:80px;background:#0A0A0A repeating-linear-gradient(135deg,transparent 0 20px,rgba(226,20,27,.07) 20px 40px)">
+  <span class="tag rv">WARNING</span>
+  <p class="t1 rv" style="margin-top:16px">이걸 모르고 시작하면,<br>당신의 채널은<br><span class="k">언제 터질지 모르는<br>시한폭탄</span>입니다.</p>
+  <div class="gifr redg rv"><div class="an an-bomb" role="img" aria-label="시한폭탄 카운트다운 후 수익 0원"><p class="tt">당신의 채널, 남은 시간</p><div class="led"><div class="dg">00:00:0<span class="win"><span class="strip"><span>5</span><span>4</span><span>3</span><span>2</span><span>1</span><span>0</span></span></span></div><div class="u"><span>HOUR</span><span>MIN</span><span>SEC</span></div></div><div class="wr"><i style="background:#E2141B"></i><i style="background:#2F7BFF"></i><i style="background:#FFD400"></i></div><p class="ft">언제 터질지, <span style="color:#FF2A31">아무도 모릅니다</span></p><div class="boom"><em>💥</em><b>수익 0원</b><span>터지는 순간, 모든 채널이 함께</span></div></div></div>
+  <p class="lead rv" style="margin-top:24px">초침은 지금도 돌아가는데,<br>언제 터질지는 <b style="color:#fff">아무도 알려 주지 않아요.</b></p>
+  <div class="gap2"></div>
+  <p class="t3 rv">그리고 터지는 순간,</p>
+  <div class="gifr rv"><div class="an an-crash" role="img" aria-label="예시: 월 수익이 0원으로 떨어지는 그래프"><div class="h"><span>예시) 채널 3개 이번 달 수익 합계</span><i>● LIVE</i></div><div class="v"><b>₩8,000,000</b><b>₩32,000,000</b><b>₩4,000,000</b><b>₩0</b></div><svg viewBox="0 0 470 200"><g stroke="#222"><line x1="0" x2="470" y1="20" y2="20"/><line x1="0" x2="470" y1="70" y2="70"/><line x1="0" x2="470" y1="120" y2="120"/><line x1="0" x2="470" y1="170" y2="170"/></g><polyline class="up" points="0,170 60,155 120,145 180,120 240,108 300,80 340,60" fill="none" stroke="#3c3" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/><polyline class="dn" points="340,60 460,195" fill="none" stroke="#FF2A31" stroke-width="6" stroke-linecap="round"/></svg><span class="st">수익 정지 · ₩0</span></div></div>
+  <p class="zero rv">수익 0<small>원</small></p>
+  <div class="lns rv">
+    <div><b>01</b>밤잠 줄여 키운 채널의 수익이 한순간에 멈추고</div>
+    <div><b>02</b>같은 열쇠에 묶인 멀쩡한 채널까지 함께 멈추고</div>
+    <div><b>03</b>급하게 새 계정을 만들면, 그건 ‘우회’가 되어 또 막힙니다</div>
+  </div>
+  <div class="gap2"></div>
+  <p class="t2 rv"><span class="k">수익 0원 폭탄</span>은<br>터진 뒤에 해체할 수 없습니다.</p>
+  <span class="chev"></span>
+</div>
+
+<!-- MAIL + DOMINO -->
+<div class="s dk">
+  <p class="t2 rv">왜 채널 <span class="k">하나</span>의 문제가<br>채널 <span class="k">전부</span>를 멈출까요?</p>
+  <div class="gifr rv"><div class="an an-dom" role="img" aria-label="채널 5개가 도미노처럼 쓰러지는 애니메이션"><p class="tt">채널 하나가 무너지면, <span style="color:#FF2A31">줄줄이</span></p><div class="row"><div><span>CH.01</span></div><div><span>CH.02</span></div><div><span>CH.03</span></div><div><span>CH.04</span></div><div><span>CH.05</span></div></div><p class="ft">보이지 않는 끈으로 묶여 있다면</p></div></div>
+  <p class="t2 rv" style="margin-top:34px">문제가 생긴 건<br><span class="rb">채널 하나</span>였는데,</p>
+  <p class="t1 rv" style="margin-top:10px">멀쩡한 채널까지<br><span class="k">도미노처럼</span> 멈춥니다.</p>
+  <p class="t2 rv" style="margin-top:28px">한국 유튜버들은 이걸<br><span class="yb" style="font-size:34px">‘연좌제’</span>라고 부릅니다.</p>
+  <p class="t3 rv" style="margin-top:16px">괴담이 아닙니다.<br><span class="k">유튜브 공식 도움말</span>에 적힌 이야기예요.</p>
+  <div class="quo rv" style="border:2px solid #E2141B;box-shadow:0 0 30px rgba(226,20,27,.35)">
+    <div class="en">“…may contribute to monetization suspension on <b>all your related accounts</b>.”</div>
+    <div class="ko">→ 한 채널의 문제가 ‘관련된 모든 계정’의<br>수익화 정지로 이어질 수 있다.</div>
+    <div class="by">YouTube 고객센터 · 책 속 출처 S03</div>
+  </div>
+  <p class="t2 rv" style="margin-top:34px">국내뿐 아니라<br><span class="rb">해외에도</span></p>
+  <p class="t1 rv" style="margin-top:6px"><span class="k">수많은 사례</span>가<br>있습니다.</p>
+  <div class="ovs">
+    <div class="ov rv"><span class="src">BlackHatWorld · 2023-01-02 · 게시글 제목</span>
+      <p class="en">“Does YT Channel Terminated Mean That <b>All Accounts Linked</b> Will Be Also Terminated?”</p>
+      <p class="ko">→ 유튜브 채널이 폐쇄되면, <span>연결된 계정도 모두</span> 폐쇄되나요?</p>
+      <p class="nt">작성자: 연결돼 있던 채널들이 함께 종료됐다</p></div>
+    <div class="ov rv"><span class="src">Reddit r/Adsense · 2022-09-13</span>
+      <p class="en">“I just got <b>banned from AdSense</b>. What should I do now?”</p>
+      <p class="ko">→ 방금 <span>애드센스에서 정지</span>당했어요. 이제 어떻게 해야 하죠?</p></div>
+    <div class="ov off rv"><span class="src">YouTube 공식 도움말 · 채널 폐쇄 정책</span>
+      <p class="en">“…you are <b>prohibited from using, possessing, or creating any other YouTube channels</b>.”</p>
+      <p class="ko">→ 폐쇄되면 <span>다른 채널을 쓰거나, 갖거나, 새로 만드는 것</span>까지 금지됩니다.</p></div>
+  </div>
+  <p class="lead rv" style="margin-top:18px">책 속 EP.06에서 해외 원문·번역·작성일·<br>댓글 위치까지 함께 읽어 드립니다.</p>
+</div>
+
+<!-- LOST -->
+<div class="s w">
+  <span class="tag rv">THE WORST PART</span>
+  <span class="emo shk rv">😱</span>
+  <p class="t1 rv" style="margin-top:16px">가장 무서운 건,<br><span class="k">터지고 나서야</span><br>안다는 겁니다.</p>
+  <div class="lost rv" id="tfLost">
+    <div>몇 달, 몇 년 키운 채널 <span>정지</span></div>
+    <div>쌓아 온 구독자 <span>정지</span></div>
+    <div>매달 들어오던 수익 <span>0원</span></div>
+    <div>다시 시작할 기회 <span>우회 금지</span></div>
+  </div>
+  <div class="rv" style="margin-top:26px;background:#141414;color:#fff;border-radius:18px;padding:24px 20px;text-align:left">
+    <p style="font-size:22px;font-weight:900;line-height:1.45">날아간 수익은<br><span style="color:#FF2A31">돌아오지 않습니다.</span></p>
+    <p style="font-size:19px;font-weight:800;line-height:1.5;margin-top:14px;color:#E9E5DF">정지된 뒤 계정을 새로 만드는 건</p>
+    <p style="font-size:22px;font-weight:900;line-height:1.45;margin-top:4px">정책이 금지하는<br><span style="background:#E2141B;padding:0 8px">‘폐쇄 우회’</span>가 됩니다.</p>
+  </div>
+  <div class="gap"></div>
+  <p class="t2 rv">이 책 없이 시작하는 건,<br><span class="rb">안전핀 없이 폭탄을 드는 것</span>과<br>같습니다.</p>
+</div>
+
+<!-- COST -->
+<div class="s dk">
+  <span class="tag rv">THE REAL COST</span>
+  <span class="emo rv" style="display:block;margin-top:14px">💸</span>
+  <p class="t1 rv" style="margin-top:10px">이 책을 사지 않으면<br>치르게 될 <span class="k">진짜 비용</span></p>
+  <div class="cx">
+    <div class="ci rv"><p class="l">❶ 채널을 잃고 나서 배우는 수업료</p><p class="v">수백~수천만 원</p><p class="d">날아간 수익 + 처음부터 다시 쌓는 몇 달</p></div>
+    <div class="ci rv"><p class="l">❷ 혼자 해외 자료를 뒤지는 시간</p><p class="v">수천 시간</p><p class="d">영어 원문 번역 + 공식 문서 대조, 무엇을 검색할지도 모른 채</p></div>
+    <div class="ci rv"><p class="l">❸ 수백만 원대 강의</p><p class="v">수백만 원</p><p class="d">그 안에서나 조용히 오가던 이야기</p></div>
+  </div>
+  <div class="cvs rv">VS</div>
+  <div class="cwin rv">
+    <span class="st">수천만 원을 지키는 비용</span>
+    <p class="l">지금, 이 책 한 권</p>
+    <p class="v">27,900<small>원</small></p>
+    <p class="d">본편 505쪽 + 리뷰 특전 3권 · 670쪽+</p>
+  </div>
+  <div class="when rv">
+    <p class="a">같은 지식이라도</p>
+    <p class="b"><span>언제 아느냐</span>가 전부입니다.</p>
+    <div class="tl2">
+      <div class="n1"><b>✓ 지금 알면</b><span>27,900원 + 30분</span></div>
+      <p class="vsm">VS</p>
+      <div class="n2"><b>✕ 터진 뒤 알면</b><span>수백~수천만 원 + 후회</span></div>
+    </div>
+    <p class="c">지금 모르면,<br><span>큰 대가를 치른 뒤에야</span><br>“그때 읽을걸” 하고 후회합니다.</p>
+  </div>
+</div>
+
+<!-- SECRETS -->
+<div class="s bk">
+  <span class="tag yl rv">🔒 SECRET</span>
+  <p class="t1 rv" style="margin-top:16px">혹시,<br><span class="k">이것</span> 알고 계셨나요?</p>
+  <p class="lead rv" style="margin-top:12px">유튜브를 시작하는 사람 대부분이<br>모르고 지나치는 사실들입니다.</p>
+  <div class="sec">
+    <div class="sc rv"><div class="no">SECRET 01</div><b>채널 이름을 다르게 지어도,<br>유튜브는 <span class="k">‘같은 사람’</span>을 알아봅니다.</b><p>그래서 한 채널의 문제가 내 다른 채널로 번집니다. 무엇이 채널들을 묶는 ‘끈’인지 알아야 끊을 수 있어요.</p><div class="lk">🔒 채널을 묶는 끈 8가지 → <i>●●●● ●●● ●●●●</i></div></div>
+    <div class="sc rv"><div class="no">SECRET 02</div><b>정지된 뒤 새 계정을 만들면<br><span class="k">‘폐쇄 우회’</span>로 더 큰 제재를 받을 수 있습니다.</b><p>“새로 하면 되지”가 가장 흔하고, 가장 치명적인 실수예요. 저자가 직접 겪었습니다.</p><div class="lk">🔒 정지 첫날 절대 하면 안 되는 일 → <i>●●●● ●●● ●●●●</i></div></div>
+    <div class="sc rv"><div class="no">SECRET 03</div><b>애드센스는 <span class="k">‘돈 받는 사람’ 1명에 1개</span>.<br>모든 채널의 돈이 한 곳에 모입니다.</b><p>그래서 채널을 아무리 나눠도 애드센스 하나가 무너지면 전부 멈춥니다. 지키는 방법은 따로 있어요.</p><div class="lk">🔒 애드센스 방화벽 3단계 → <i>●●●● ●●● ●●●●</i></div></div>
+    <div class="sc rv"><div class="no">SECRET 04</div><b>저작권 문제가 없어도<br><span class="k">수익화 심사</span>에서는 떨어질 수 있습니다.</b><p>허락받은 영상, AI로 만든 영상도 ‘내가 무엇을 더했나’가 없으면 막혀요. 2025년 7월, 정책 이름까지 바뀌었습니다.</p><div class="lk">🔒 통과하는 편집 6원칙 → <i>●●●● ●●● ●●●●</i></div></div>
+    <div class="sc rv"><div class="no">SECRET 05</div><b><span class="k">2027년 2월</span>부터 새로 신청하는 채널은<br>수익화 기준이 2배로 높아집니다.</b><p>시청 8,000시간 또는 쇼츠 2,000만 회. 이미 수익화된 채널은 영향이 없어요. 지금 시작하는 사람이 유리한 이유입니다.</p><div class="lk">🔒 기준 상향 전 준비할 것 → <i>●●●● ●●● ●●●●</i></div></div>
+    <div class="sc rv"><div class="no">SECRET 06</div><b>폐쇄 항소는 <span class="k">기회가 정해져</span> 있고,<br>수익 정지 이의신청은 21일 안에 해야 합니다.</b><p>기한을 놓치면 끝. 그래서 평소 10분의 ‘항소 대비 키트’가 위기 때 하룻밤을 아껴 줍니다.</p><div class="lk">🔒 항소 영상 7단계 구성표 → <i>●●●● ●●● ●●●●</i></div></div>
+  </div>
+  <p class="t2 rv" style="margin-top:34px">“그래? 이런 게 있었어?”</p>
+  <p class="lead rv" style="margin-top:10px">이건 책 내용의 <b style="color:#fff">아주 일부</b>입니다.<br>나머지는 505쪽 안에, 근거와 함께 전부 들어 있습니다.</p>
+</div>
+
+<!-- BENEFITS -->
+<div class="s gy">
+  <span class="tag rv">FOR YOU</span>
+  <p class="t1 rv" style="margin-top:16px">이 책을 읽고 시작하면,<br><span class="k">당신에게 생기는 것</span></p>
+  <div class="ben">
+    <div class="rv"><em>🧱</em><div><b>첫 영상 전, 30분 만에 ‘터지지 않는 계정 구조’</b><span>한 채널이 날아가도 나머지는 그대로인 독립 설계. 화면 보며 그대로 따라 하면 끝.</span></div></div>
+    <div class="rv"><em>📈</em><div><b>채널을 2개, 5개, 10개로 늘려도 불안하지 않은 확장</b><span>큰 수익을 낸 사람들의 공통점, ‘여러 채널’을 안전하게 쌓는 순서.</span></div></div>
+    <div class="rv"><em>🗝️</em><div><b>휴대폰을 잃어버려도, 해킹당해도 돌아오는 비상 열쇠</b><span>어떤 사고가 나도 내 채널로 다시 들어오는 나만의 복구 장치.</span></div></div>
+    <div class="rv"><em>🎬</em><div><b>수익화 심사에서 떨어지는 영상을 미리 거르는 눈</b><span>재사용·AI 영상·저작권, 통과하는 기준과 떨어지는 기준을 구분.</span></div></div>
+    <div class="rv"><em>🚑</em><div><b>정지 메일이 와도 패닉 대신 순서대로</b><span>첫날 할 일 → 항소 → 재신청. 다른 채널은 그대로 굴러가게.</span></div></div>
+    <div class="rv"><em>💰</em><div><b>남들이 수백만 원 수업료를 내고 배우는 것을, 시작 전에</b><span>잃고 배우면 수백~수천만 원. 지금 배우면 이 책 한 권.</span></div></div>
+  </div>
+</div>
+
+<!-- DAY (gain simulation) -->
+<div class="s gy" style="padding-top:20px">
+  <p class="t2 rv">이 책대로 시작한 당신의<br><span style="color:#22A35A">어느 하루</span></p>
+  <div class="day">
+    <div class="dy rv"><span class="tm">07:30</span><div><b>출근길, 채널 현황을 확인합니다.</b><span>채널마다 벽이 서 있으니, 어느 하나가 흔들려도 불안하지 않아요.</span></div></div>
+    <div class="dy rv"><span class="tm">13:00</span><div><b>메일함에 정지 안내가 와도 당황하지 않습니다.</b><span>그 채널 하나만 순서대로 대응하면 끝. 다른 채널은 오늘도 그대로 굴러갑니다.</span></div></div>
+    <div class="dy rv"><span class="tm">21:00</span><div><b>퇴근 후 30분, 네 번째 채널을 엽니다.</b><span>같은 방어막을 복사하듯 그대로. 채널이 늘수록 오히려 더 안전해져요.</span></div></div>
+  </div>
+  <p class="t3 rv" style="margin-top:24px">걱정은 줄이고,<br><span class="k">콘텐츠에만 집중하는 유튜버</span>가 됩니다.</p>
+</div>
+
+<!-- FUTURES -->
+<div class="s bk">
+  <p class="t2 rv">6개월 뒤,<br>당신의 유튜브는 <span class="k">둘 중 하나</span>입니다.</p>
+  <div class="fut">
+    <div class="b1 rv"><span class="h">😱 이 책 없이 시작한 미래</span><h4>채널 3개가 함께 멈추고,<br>수익은 0원.</h4><ul><li>“새 계정 만들면 되겠지” → 또 정지</li><li>몇 달의 영상과 구독자가 한순간에</li><li>“그때 읽을걸…” 후회</li></ul></div>
+    <div class="b2 rv"><span class="h">😎 이 책으로 시작한 미래</span><h4>한 채널이 흔들려도,<br>나머지는 계속 법니다.</h4><ul><li>채널마다 벽이 서 있어 사고는 그 채널에서 멈춤</li><li>정지 메일에도 순서대로 대응</li><li>안심하고 채널을 하나씩 늘려 감</li></ul></div>
+  </div>
+  <p class="t2 rv" style="margin-top:28px;color:#fff">어느 쪽을 고를지는,</p>
+  <p class="t2 rv" style="margin-top:8px"><span style="display:inline-block;background:#FFD400;color:#141414;font-weight:900;padding:4px 14px;border-radius:6px;animation:tfPp 1.4s ease-in-out infinite">지금 이 페이지에서</span><br><span style="color:#fff">정해집니다.</span></p>
+</div>
+
+<!-- AUTHOR -->
+<div class="s ath">
+  <span class="tag rv" style="background:#E2141B;color:#fff">ABOUT THE AUTHOR</span>
+  <p class="aq rv">이 책은 누가 썼을까요?</p>
+  <div class="apf rv">
+    <div class="aav">TF</div>
+    <div><p class="anm">튜브 팩터 <small>Tube Factor</small></p><p class="arl">前 보안 프로그램 엔지니어<br>現 유튜브 크리에이터</p></div>
+  </div>
+  <p class="ah rv">대한민국 국민이라면<br>누구나 아는 <span>국가 기반 시설</span>.<br>그곳에서 운영되던<br>보안 프로그램.</p>
+  <p class="ah2 rv">저자는 그 <b>핵심 시스템</b>을<br><b>직접 맡아 운영·관리</b>하던<br>엔지니어였습니다.</p><p class="ah3 rv">막대한 금액의 계약이 오가는,<br>작은 틈 하나도 허용되지 않는 시스템에서<br>매일 <b>시스템의 연결 구조</b>를 들여다봤습니다.</p>
+  <div class="aspec rv">
+    <div><em>💼</em><p><small>CAREER</small>보안 회사 <b>프로그램 엔지니어</b></p></div>
+    <div><em>🔐</em><p><small>EXPERTISE</small>국가 기반 시설 <b>핵심 시스템</b> 운영·관리</p></div>
+    <div><em>📡</em><p><small>STRENGTH</small><b>IT·통신 구조</b>를 꿰뚫는 눈</p></div>
+    <div><em>🎬</em><p><small>NOW</small>하루의 3분의 1을 <b>유튜브 운영</b></p></div>
+  </div>
+  <p class="aq2 rv">그런 그가, <span>연좌제로 채널을 잃었습니다.</span></p>
+  <div class="achn">
+    <div class="rv"><i>01</i><div><b>연좌제로 채널을 날리다</b><p>공들여 키운 채널들의 수익이 한순간에 멈췄습니다.</p></div></div>
+    <div class="rv"><i>02</i><div><b>엔지니어의 본능으로 파고들다</b><p>“왜 하나가 걸렸는데 전부 멈췄지?” 보안을 다루던 눈으로 <u>구조부터</u> 뜯어봤습니다.</p></div></div>
+    <div class="rv"><i>03</i><div><b>해외 사이트를 샅샅이 뒤지다</b><p>한국엔 답이 없었습니다. 영어권 커뮤니티 글과 구글 공식 문서를 <u>댓글 하나까지</u> 번역·분석했습니다.</p></div></div>
+    <div class="rv ok"><i>04</i><div><b>마침내, 해결책을 찾아내다</b><p>흩어진 단서를 하나의 설계로 엮어 냈고, 지금 그 방식 그대로 <u>문제없이</u> 운영 중입니다.</p></div></div>
+  </div>
+  <div class="aqt rv">“보안을 다루던 사람에게<br>이건 <span>‘운’</span>의 문제가 아니라<br><b>‘구조’</b>의 문제였습니다.”</div>
+  <div class="ast rv">
+    <div><b class="num" data-to="252">252</b><span>건의 출처</span></div>
+    <div><b class="num" data-to="94">94</b><span>건의 공식 문서</span></div>
+    <div><b class="num" data-to="670">670</b><span>페이지</span></div>
+  </div>
+  <p class="afin rv">그냥 겪은 사람이 아니라,<br><span>시스템을 아는 사람</span>이 파헤친 책.</p>
+  <p class="anx rv">그리고 그런 저자조차,<br><b>처음에는 몰랐습니다.</b></p>
+</div>
+
+<!-- STORY -->
+<div class="s gy">
+  <span class="tag d rv">AUTHOR'S CONFESSION</span>
+  <span class="emo rv">🤦</span>
+  <p class="t3 rv" style="margin-top:16px;color:#5E5E5E">보안 엔지니어였던 저자도, 처음에는 몰랐습니다.</p>
+  <p class="t2 rv" style="margin-top:6px">그리고 이걸<br><span class="rb">아무도 가르쳐 주지 않았습니다.</span></p>
+  <p class="t1 rv" style="margin-top:18px">그 대가로 저는,<br><span class="k">모든 채널의 수익</span>을<br>잃었습니다.</p>
+  <div class="tl rv">
+    <div class="st"><div class="n">01</div><h4>여러 채널 수익화 성공</h4><p>밤잠 줄여 키운 채널들. 드디어 수익이 들어오기 시작했어요.</p></div>
+    <div class="st bad"><div class="n">02</div><h4>정지 메일 한 통, 채널들이 함께 멈춤</h4><p>하나가 아니라, 공들여 키운 채널들이 한꺼번에요.</p></div>
+    <div class="st bad"><div class="n">03</div><h4>“새 계정 만들면 되겠지” → 또 정지</h4><p>가장 흔한 실수. 오히려 ‘우회’가 되어 상황이 더 나빠졌어요.</p></div>
+    <div class="st"><div class="n">04</div><h4>보안 엔지니어의 눈으로, 연좌제를 파고들었다</h4><p>한국어 자료엔 하소연과 소문뿐. 그래서 해외 커뮤니티와 구글 공식 문서를 밤새 영어로 뒤지고 분석했어요.</p></div>
+    <div class="st ok"><div class="n">05</div><h4>답을 찾았고, 지금은 문제없이 운영 중</h4><p>찾아낸 방식 그대로, 하루의 3분의 1 이상을 유튜브와 보내며 운영하고 있어요.</p></div>
+  </div>
+  <div class="rv" style="margin-top:34px">
+    <p class="t3">그렇게 밤새 해외 커뮤니티를 뒤지던 어느 날,</p>
+    <p class="t2" style="margin-top:6px">단 하나의 방법을<br><span class="rb">발견했습니다.</span></p>
+    <p class="eurx">유레카!</p>
+  </div>
+  <div class="eur rv" style="border:3px solid #FFD400;box-shadow:0 0 40px rgba(255,212,0,.35)"><span class="bd">💡 유레카!</span>
+    <div class="en">“… all BHW members suggest to <b>keep channels on different accounts</b>.”</div>
+    <div class="ko" style="font-size:25px;line-height:1.35">“채널을<br><span style="background:#FFD400;color:#141414;padding:0 6px">서로 다른 계정</span>에 두라.”</div>
+    <div class="by">BlackHatWorld · 2023-01-06 · 댓글 #13 · 책 속 출처 R127</div>
+  </div>
+  <p class="t3 rv" style="margin-top:22px">이 한 문장에서 시작해,<br>공식 문서와 해외 커뮤니티 글들을<br>하나씩 대조해 확인하고<br><span class="k">제 채널에 직접 적용</span>했습니다.</p>
+  <p class="t3 rv" style="margin-top:34px">“누군가 먼저 가르쳐 줬다면,<br>저는 돌아가지 않았을 거예요.”</p>
+</div>
+
+<!-- ANSWER -->
+<div class="s w">
+  <span class="tag rv">THE ANSWER</span>
+  <p class="t2 rv" style="margin-top:16px">피해가 컸던 사람들은 대부분<br><span class="mk">모든 채널이 하나의 열쇠</span>에<br>묶여 있었습니다.</p>
+  <div class="rv" style="margin-top:20px;background:#141414;color:#fff;border-radius:18px;padding:22px 18px">
+    <p style="font-size:18px;font-weight:800;color:#C9C5BF">채널들은 <span style="color:#FFD400">보이지 않는 끈</span>으로 묶여 있었고,</p>
+    <p style="font-size:26px;font-weight:900;line-height:1.4;margin-top:8px">한 채널이 무너지자<br><span style="background:#E2141B;padding:0 8px">멀쩡하던 채널까지</span><br>줄줄이 무너졌습니다.</p>
+    <div style="margin-top:16px;border-left:4px solid #FFD400;padding:4px 0 4px 12px;text-align:left">
+      <p style="font-family:'JetBrains Mono',monospace;font-size:13.5px;line-height:1.55;color:#E9E5DF;letter-spacing:0">“…may contribute to monetization suspension on <b style="color:#FFD400">all your related accounts</b>.”</p>
+      <p style="font-size:15px;font-weight:900;margin-top:6px">→ 한 채널의 문제가 <span style="background:#E2141B;padding:0 6px">관련된 모든 계정</span>의 수익화 정지로</p>
+      <p style="font-family:'JetBrains Mono',monospace;font-size:10.5px;color:#8A867F;margin-top:6px;letter-spacing:0">YouTube 고객센터 · 책 속 출처 S03</p>
+    </div>
+    <p style="font-size:14px;color:#A7A39D;margin-top:14px">그 끈이 무엇인지, 어떻게 끊는지는 책에서 공개합니다.</p>
+  </div>
+  <div class="dg">
+    <div class="bad rv"><div class="lb">BEFORE · 대부분의 구조</div>
+      <svg viewBox="0 0 220 170" aria-hidden="true"><rect x="80" y="8" width="60" height="34" rx="8" fill="#141414"/><text x="110" y="30" font-size="12" fill="#fff" text-anchor="middle" font-weight="800">내 계정</text><g stroke="#E2141B" stroke-width="2.5" fill="none"><path d="M110 42 L30 112"/><path d="M110 42 L83 112"/><path d="M110 42 L137 112"/><path d="M110 42 L190 112"/></g><g fill="#E2141B"><rect x="10" y="112" width="40" height="30" rx="6"/><rect x="63" y="112" width="40" height="30" rx="6"/><rect x="117" y="112" width="40" height="30" rx="6"/><rect x="170" y="112" width="40" height="30" rx="6"/></g><g fill="#fff"><path d="M26 121 L36 127 L26 133Z"/><path d="M79 121 L89 127 L79 133Z"/><path d="M133 121 L143 127 L133 133Z"/><path d="M186 121 L196 127 L186 133Z"/></g><text x="110" y="162" font-size="11" fill="#E2141B" text-anchor="middle" font-weight="800">보이지 않는 끈으로 연결</text></svg>
+      <p style="font-size:20px;font-weight:900;line-height:1.4;margin-top:12px">한 채널이 멈추면<br><span class="rb">모두 함께</span> 흔들릴 수 있어요</p></div>
+    <div class="good rv"><div class="lb">AFTER · 이 책의 구조</div>
+      <svg viewBox="0 0 220 170" aria-hidden="true"><g fill="#141414"><rect x="10" y="8" width="40" height="30" rx="6"/><rect x="63" y="8" width="40" height="30" rx="6"/><rect x="117" y="8" width="40" height="30" rx="6"/><rect x="170" y="8" width="40" height="30" rx="6"/></g><g fill="#fff" font-size="8.5" font-weight="800" text-anchor="middle"><text x="30" y="27">계정1</text><text x="83" y="27">계정2</text><text x="137" y="27">계정3</text><text x="190" y="27">계정4</text></g><g stroke="#141414" stroke-width="2.5"><path d="M30 38 V112"/><path d="M83 38 V112"/><path d="M137 38 V112"/><path d="M190 38 V112"/></g><g fill="#FFD23F"><rect x="54" y="4" width="5" height="142" rx="2"/><rect x="108" y="4" width="5" height="142" rx="2"/><rect x="161" y="4" width="5" height="142" rx="2"/></g><g fill="#E2141B"><rect x="10" y="112" width="40" height="30" rx="6"/><rect x="63" y="112" width="40" height="30" rx="6"/><rect x="117" y="112" width="40" height="30" rx="6"/><rect x="170" y="112" width="40" height="30" rx="6"/></g><g fill="#fff"><path d="M26 121 L36 127 L26 133Z"/><path d="M79 121 L89 127 L79 133Z"/><path d="M133 121 L143 127 L133 133Z"/><path d="M186 121 L196 127 L186 133Z"/></g><text x="110" y="162" font-size="11" fill="#141414" text-anchor="middle" font-weight="800">채널마다 벽 · 겹치는 것 0개</text></svg>
+      <p style="font-size:20px;font-weight:900;line-height:1.4;margin-top:12px">한 채널이 날아가도<br><span class="rb">나머지 채널 수익은 그대로</span></p><p style="font-size:14px;color:#5E5E5E;margin-top:6px">사고는 그 채널에서 멈추는 안전 설계</p></div>
+  </div>
+  <div class="gap2"></div>
+  <p class="t3 rv">한 채널이 날아가도<br>나머지는 끄떡없는</p>
+  <p class="t1 rv" style="margin-top:6px"><span class="rb">채널별 안전 설계</span></p>
+  <p class="lead rv" style="margin-top:12px">이게 수익 0원의 뇌관을 뽑는 방법입니다.<br>시작하기 전이라면, <b style="color:#E2141B">단 30분.</b></p>
+</div>
+
+<!-- REFERENCE COMPARE -->
+<div class="s w">
+  <span class="tag rv">WHAT YOU GET MORE</span>
+  <p class="t2 rv" style="margin-top:16px">보통의 유튜브 강의가 끝나는 곳에서,<br><span class="k">이 책은 시작합니다.</span></p>
+  <div class="rcmp">
+    <div class="g1 rv"><p class="h">보통의 유튜브 강의·영상</p><ul><li>썸네일 만드는 법</li><li>알고리즘 타는 법</li><li>조회수 올리는 법</li></ul></div>
+    <p class="ar rv">▼ 이 책은 여기에 더해</p>
+    <div class="g2 rv"><p class="h">유튜브·쇼츠 시작 전, 아무도 가르쳐 주지 않는 것들</p><ul>
+      <li>한 채널이 무너져도 나머지 수익은 지키는 설계</li>
+      <li>수익화 심사에서 떨어지지 않는 영상 기준</li>
+      <li>정지 메일 첫날부터 항소까지 대응 순서</li>
+      <li>공식 문서·해외 원문으로 검증된 근거 252건</li>
+      <li>리뷰 특전 실전서 3권(항소·성공 채널·쇼핑쇼츠)</li></ul></div>
+  </div>
+</div>
+
+<!-- NOBODY -->
+<div class="s gy">
+  <span class="tag d rv">NOBODY TELLS YOU</span>
+  <p class="t1 rv" style="margin-top:16px">이건 유튜브 초반에<br><span class="k">아무도</span><br>가르쳐 주지 않아요.</p>
+  <div class="vs rv">
+    <div class="l"><div class="lb">어디서나 배우는 것</div><ul><li>썸네일 잘 만드는 법</li><li>알고리즘 타는 법</li><li>조회수 올리는 법</li></ul></div>
+    <div class="r"><div class="lb">아무도 알려 주지 않는 것</div><ul><li>채널 열기 전, 계정 나누는 법</li><li>애써 번 수익을 지키는 법</li><li>정지돼도 다시 서는 법</li><li>수익화 심사를 통과하는 콘텐츠</li></ul></div>
+  </div>
+  <div class="gap2"></div>
+  <p class="t2 rv">시작 전에 아무도<br>가르쳐 주지 않는 <span class="k">일곱 가지</span></p>
+  <ul class="sev rv">
+    <li><div><b>유튜브는 ‘누가’ 운영하는지를 봅니다.</b><span>이름이 달라도 같은 사람이면 한 사람의 채널이에요.</span></div></li>
+    <li><div><b>채널 하나에 구글 계정 하나. 처음부터.</b><span>커진 뒤에 나누는 건 이사보다 어려워요.</span></div></li>
+    <li><div><b>계정 만들 때 넣는 ‘이 정보’를 조심하세요.</b><span>무심코 넣은 정보 하나가 모든 채널을 묶는 ‘다리’가 돼요.</span></div></li>
+    <li><div><b>애드센스는 ‘돈 받는 사람’ 하나에 하나.</b><span>모든 돈이 모이는 유일한 공통점이라 더 위험해요.</span></div></li>
+    <li><div><b>저작권 통과 ≠ 수익화 통과.</b><span>‘내가 무엇을 더했나’가 없으면 막혀요.</span></div></li>
+    <li><div><b>정지 메일 받은 날, 삭제·새 채널은 금물.</b><span>증거가 사라지고 ‘우회’로 보여요.</span></div></li>
+    <li><div><b>되살리는 길은 공식 절차뿐, 기한도 있어요.</b><span>21일 안 이의신청, 90일 뒤 재신청.</span></div></li>
+  </ul>
+  <div class="rv" style="margin:30px -24px -68px;background:#141414;color:#fff;padding:40px 22px 46px">
+    <p style="font-size:20px;font-weight:800;color:#C9C5BF">아무도 가르쳐 주지 않았지만,</p>
+    <p style="font-size:30px;font-weight:900;line-height:1.35;margin-top:8px">이 책에<br><span style="background:#FFD400;color:#141414;padding:0 8px">모두 담아 놓았습니다.</span></p>
+    <p style="font-size:24px;font-weight:900;margin-top:18px;line-height:1.4">당신의 채널을 지켜 줄<br><span style="color:#FF2A31">단 하나의 비법</span></p>
+  </div>
+</div>
+
+<!-- ONLY -->
+<div class="s rd">
+  <span class="tag w rv">THE ONLY BOOK</span>
+  <p class="t1 rv" style="margin-top:16px">유튜브 수익화 전에<br>반드시 읽어야 할 책.</p>
+  <p class="t2 rv" style="margin-top:10px"><span class="bx">안 읽으면 후회할 책.</span></p>
+  <p class="lead rv" style="margin-top:18px">유튜브 책·강의는 대부분 채널을 연 다음<br>“어떻게 키우나”에서 시작해요.<br>이 책은 한 걸음 앞, <b style="color:#fff">계정을 만드는 순간</b>부터.</p>
+  <div class="four rv">
+    <div><b>① 시작 전, 구조부터</b><span>채널마다 독립된 기둥을 화면 보며 따라 하기</span></div>
+    <div><b>② 채널별 완전 분리 설계</b><span>한 채널이 무너져도 나머지는 지키는 구조와 복구 장치까지</span></div>
+    <div><b>③ 피하고·줄이고·일어서기</b><span>정책부터 정지 첫날, 항소 영상까지 한 흐름</span></div>
+    <div><b>④ 모든 말에 근거</b><span>공식 자료에 번호를 달아 원문 확인 가능</span></div>
+  </div>
+  <p class="t3 rv" style="margin-top:34px">이 네 가지를 한 권에 담은 책은<br><u>국내 어디에도 없습니다.</u></p>
+  <p class="sm rv" style="margin-top:10px;font-size:14px">수백만 원짜리 강의 내용과 맞먹는 깊이를, 한 권에.</p>
+</div>
+
+<!-- ORDEAL -->
+<div class="s bk" style="padding-top:72px;padding-bottom:72px">
+  <span class="emo shk rv">😰</span>
+  <p class="t3 rv" style="margin-top:14px;color:#C9C5BF">유튜버라면 언젠가 반드시 겪게 될 시련,</p>
+  <p class="t0 rv" style="margin-top:8px;font-size:52px;color:#FF2A31">수익화 정지</p>
+  <div class="srch rv" style="margin-top:30px;background:#fff;color:#141414"><span class="q">⌕</span> 유튜브 수익화 정지 해결 방법<span class="cur"></span></div>
+  <div class="rv nores"><b>검색 결과가 없습니다</b><span>“억울하다”는 하소연과 확인되지 않은 소문뿐</span></div>
+  <p class="t2 rv" style="margin-top:30px">그것을 해결할 방법은<br><span class="wbox">아무 데서도</span><br>가르쳐 주지 않았습니다.</p>
+  <p class="t3 rv" style="margin-top:18px">유튜브를 아무리 뒤져 봐도<br><span class="k">나오지 않았습니다.</span></p>
+  <div class="line"></div>
+  <p class="t2 rv" style="margin-top:26px">그래서 직접 찾아냈고,<br><span class="yb">이 책 한 권에 담았습니다.</span></p>
+</div>
+
+<!-- SHIELDS -->
+<div class="s dk">
+  <span class="tag rv">THE THREE SHIELDS</span>
+  <p class="t2 rv" style="margin-top:16px">구글의 <span class="k">수익화 정지 칼날</span> 앞에서,</p>
+  <p class="t1 rv" style="margin-top:6px"><span class="rb">세 겹의 방패</span></p>
+  <p class="lead rv" style="margin-top:12px">칼날이 언제 떨어지든,<br><b style="color:#fff">덜 맞고, 맞아도 버티고, 다시 일어서는 법</b>.</p>
+  <div class="shs">
+    <div class="sh rv"><svg viewBox="0 0 54 62"><path d="M27 2 L51 11 V30 C51 45 40 55 27 60 C14 55 3 45 3 30 V11Z" fill="none" stroke="#FFD23F" stroke-width="4"/><path d="M17 31 L24 38 L38 23" fill="none" stroke="#FFD23F" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/></svg><div><div class="no">SHIELD 01</div><h4>구글의 칼날 피하기</h4><p>저작권·수익화 정책으로 제재가 생길 일 자체를 줄여요</p></div></div>
+    <div class="sh st rv"><svg viewBox="0 0 54 62"><path d="M27 2 L51 11 V30 C51 45 40 55 27 60 C14 55 3 45 3 30 V11Z" fill="#fff"/><rect x="25" y="14" width="4" height="36" rx="2" fill="#E2141B"/><rect x="12" y="29" width="30" height="4" rx="2" fill="#E2141B"/></svg><div><div class="no">SHIELD 02 ★ 핵심</div><h4>구글의 제재 줄이기</h4><p>1계정 1채널 완전 분리로 사고를 그 채널에서 멈춰요</p></div></div>
+    <div class="sh rv"><svg viewBox="0 0 54 62"><path d="M27 2 L51 11 V30 C51 45 40 55 27 60 C14 55 3 45 3 30 V11Z" fill="none" stroke="#22C26A" stroke-width="4"/><path d="M27 44 V20 M18 29 L27 20 L36 29" fill="none" stroke="#22C26A" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/></svg><div><div class="no">SHIELD 03</div><h4>정지돼도 다시 일어서기</h4><p>항소·재신청·복구, 공식 길로 다친 채널을 되살려요</p></div></div>
+  </div>
+</div>
+
+<!-- BEFORE AFTER -->
+<div class="s w">
+  <span class="tag rv">BEFORE &amp; AFTER</span>
+  <p class="t1 rv" style="margin-top:16px">이 책을 알기<br><span class="k">전</span>과 <span class="k">후</span></p>
+  <div class="vsx">
+    <div class="rv"><span class="vq">Q. 한 채널이 해킹되면</span><div class="vbad"><p>같은 계정의 모든 채널이 함께 넘어가요</p></div><div class="vdown">▼</div><div class="vgood"><p>그 채널 하나만 복구하면 돼요</p></div></div>
+    <div class="rv"><span class="vq">Q. 휴대폰을 잃어버리면</span><div class="vbad"><p>모든 채널이 한꺼번에 로그인 불가</p></div><div class="vdown">▼</div><div class="vgood"><p>채널마다 둔 비상 열쇠로 바로 들어가요</p></div></div>
+    <div class="rv"><span class="vq">Q. 한 채널 수익이 정지되면</span><div class="vbad"><p>묶인 다른 채널 수익까지 멈출 수 있어요</p></div><div class="vdown">▼</div><div class="vgood"><p>연결 고리가 없어 그 채널에서 멈춰요</p></div></div>
+    <div class="rv"><span class="vq">Q. 정지 메일을 받으면</span><div class="vbad"><p>어디서부터 할지 몰라 패닉</p></div><div class="vdown">▼</div><div class="vgood"><p>첫날 할 일부터 항소까지 순서대로</p></div></div>
+  </div>
+  <div class="huge rv">
+    <p class="a">이 차이가 쌓이면,</p>
+    <p class="c" style="margin-top:4px">당신의 수익</p>
+    <p class="b"><span>수백만 원</span><br>에서<br><span>수천만 원</span></p>
+    <p class="c">을 지켜 냅니다.</p>
+  </div>
+</div>
+
+<!-- VOLUME -->
+<div class="s gy">
+  <span class="tag d rv">OVERWHELMING VOLUME</span>
+  <p class="t2 rv" style="margin-top:16px">“얇은 PDF 한 권”을<br>떠올리셨다면, 다시 보세요.</p>
+  <p class="vol rv"><span class="num" data-to="670">670</span><small>쪽+</small></p>
+  <p class="rv" style="font-size:15px;font-weight:800;margin-top:6px">본편 + 특전 3권 · A4 기준</p>
+  <div class="rv" style="margin-top:22px;background:#141414;color:#fff;border-radius:18px;padding:22px 18px">
+    <p style="font-size:17px;font-weight:800;color:#C9C5BF;line-height:1.6"><span style="color:#FFD400">저자가 직접 겪은 실패</span>와<br><span style="color:#FFD400">수많은 해외 유저들의 경험담</span>을</p>
+    <p style="font-size:24px;font-weight:900;line-height:1.4;margin-top:8px">샅샅이 조사해 담은<br><span style="background:#E2141B;padding:0 8px">압도적인 분량</span></p>
+  </div>
+  <div class="stk rv" id="tfStk">
+    <div style="height:100%;background:#E2141B"><b>505쪽</b><span>본편</span></div>
+    <div style="height:32%;background:#141414"><b>78쪽</b><span>쇼핑쇼츠</span></div>
+    <div style="height:29%;background:#2F7BFF"><b>67쪽</b><span>성공 채널</span></div>
+    <div style="height:24%;background:#8F8B85"><b>21쪽</b><span>항소</span></div>
+  </div>
+  <div class="stats rv">
+    <div><b class="k"><span class="num" data-to="252">252</span><small>건</small></b><span>출처 목록의 자료</span><em>모든 근거에 번호</em></div>
+    <div><b><span class="num" data-to="94">94</span><small>건</small></b><span>한 줄씩 읽은 공식 문서</span><em>유튜브·구글 도움말</em></div>
+    <div><b><span class="num" data-to="106">106</span><small>개</small></b><span>직접 만든 그림·도표</span><em>보면서 따라 하도록</em></div>
+    <div><b class="k"><span class="num" data-to="20">20</span><small>장</small></b><span>해외 원문 카드</span><em>원문·번역·댓글 번호</em></div>
+  </div>
+  <div class="hrsx rv">
+    <p style="font-size:20px;font-weight:800;color:#C9C5BF">혼자 조사했다면</p>
+    <p class="n">수천<small> 시간</small></p>
+    <p class="x">그 시간을,<br><span>이 한 권이 아껴 드립니다.</span></p>
+  </div>
+</div>
+
+<!-- PROOF -->
+<div class="s w">
+  <span class="tag rv">WHY IT MATTERS</span>
+  <span class="emo rv" style="display:block;margin-top:14px">🤦</span>
+  <p class="t2 rv" style="margin-top:10px">인터넷 꿀팁 믿었다가<br><span class="k">채널 날린 사람</span>,<br>생각보다 많습니다.</p>
+  <p class="lead rv" style="margin-top:12px">“이렇게 하면 안 걸려요”, “다들 이렇게 해요”<br>그 말을 따라 한 대가는 <b style="color:#E2141B">고스란히 내 수익</b>이었어요.</p>
+  <div class="rv" style="margin-top:24px;background:#141414;color:#fff;border-radius:18px;padding:24px 18px">
+    <p style="font-size:17px;font-weight:800;color:#C9C5BF">이 책은 썰과 카더라를 <span style="color:#FF2A31">단 한 줄도</span> 넣지 않았습니다.</p>
+    <p style="font-size:24px;font-weight:900;line-height:1.4;margin-top:8px">유튜브·구글이 직접 쓴<br><span style="background:#FFD400;color:#141414;padding:0 8px">공식 기준</span>으로만<br>길을 알려 드립니다.</p>
+  </div>
+  <p class="t3 rv" style="margin-top:34px">그래서 당신에게는<br><span class="k">이런 일이 생깁니다</span></p>
+  <div class="pfx">
+    <div class="rv"><p class="x">✕ 카더라 따라 했다가 정지</p><p class="o">✓ 공식 기준대로 하니까, <b>처음부터 안심</b></p></div>
+    <div class="rv"><p class="x">✕ 정책이 바뀌면 또 검색 지옥</p><p class="o">✓ 출처 번호로 <b>원문을 바로 확인</b>, 혼자서도 업데이트</p></div>
+    <div class="rv"><p class="x">✕ 정지 메일 앞에서 할 말이 없음</p><p class="o">✓ 고객센터에 <b>그대로 말할 수 있는 근거</b>가 손에</p></div>
+    <div class="rv"><p class="x">✕ 남들이 겪은 실수를 나도 반복</p><p class="o">✓ 해외에서 <b>먼저 치른 대가</b>를 시작 전에 미리</p></div>
+  </div>
+  <div class="srcbelt rv"><span>S01</span><span>S02</span><span>S03</span><span>S05</span><span>S51</span><span class="r">R127</span><span class="m">외 246건</span></div>
+  <p class="sm rv" style="margin-top:8px">모든 근거는 책 속 ‘출처 모음’에 번호로 정리 · 총 252건</p>
+  <p class="t2 rv" style="margin-top:30px">당신은 시행착오 없이,<br><span class="rb">검증된 길</span>만 걸으면 됩니다.</p>
+  <div class="prf rv"><span class="mo" style="font-size:11px;color:#FFD23F;font-weight:800">AUTHOR · TUBE FACTOR</span><p class="t">책상 위 이론이 아닙니다.</p>
+    <ul><li><b>직접 겪었습니다.</b> 채널 여러 개를 잃고, 새 계정에서 또 잃은 뒤 시작한 조사예요.</li><li><b>직접 확인했습니다.</b> 공식 문서 94건을 한 줄씩 열고, 해외 글은 댓글까지 번역했어요.</li><li><b>지금도 이 방식 그대로.</b> 지금까지 <span class="yb">문제없이</span> 운영하고 있어요.</li></ul></div>
+</div>
+
+<!-- TOC -->
+<div class="s dk">
+  <span class="tag rv">CONTENTS</span>
+  <p class="t2 rv" style="margin-top:16px">유튜브를 시작하며 품게 될<br><span class="k">모든 질문</span>,</p>
+  <p class="t1 rv" style="margin-top:4px"><span class="rb">이 한 권이 답합니다.</span></p>
+  <div class="tqs">
+    <div class="tq rv"><div class="qq"><span>PART 01</span>유튜브, 대체 어떻게 돈이 들어오는 거지?</div><div class="aa">→ 계정·채널·애드센스, 돈이 흐르는 구조를 한눈에</div></div>
+    <div class="tq rv"><div class="qq"><span>PART 02</span>왜 멀쩡한 내 채널까지 같이 멈추는 거야?</div><div class="aa">→ ‘연좌제’가 일어나는 진짜 이유와 해외 사례</div></div>
+    <div class="tq rv"><div class="qq"><span>PART 03</span>채널 여러 개, 어떻게 가져가야 안전하지?</div><div class="aa">→ 처음에 정하면 못 바꾸는 설계의 원칙</div></div>
+    <div class="tq core rv"><div class="qq"><span>PART 04</span>그래서 정확히 뭘, 어떻게 하면 되는데?</div><div class="aa">→ 🔒 화면 보며 그대로 따라 하는 STEP 1~9</div></div>
+    <div class="tq rv"><div class="qq"><span>PART 05</span>해킹당하거나 휴대폰을 잃어버리면?</div><div class="aa">→ 어떤 사고에도 내 채널로 돌아오는 복구 설계</div></div>
+    <div class="tq rv"><div class="qq"><span>PART 06</span>채널이 10개로 늘어나도 괜찮을까?</div><div class="aa">→ 채널이 늘어도 흔들리지 않는 심화 설계</div></div>
+    <div class="tq rv"><div class="qq"><span>PART 07</span>수익화 심사, 한 번에 통과하려면?</div><div class="aa">→ 저작권·AI 영상·재사용 정책·쇼츠·첫 30일</div></div>
+    <div class="tq rv"><div class="qq"><span>PART 08</span>정지 메일이 와 버렸다면?</div><div class="aa">→ 첫날 할 일부터 항소·복구까지 순서대로</div></div>
+  </div>
+  <p class="t3 rv" style="margin-top:28px">질문이 생길 때마다 펼치면 되는<br><span class="y">내 채널 옆의 매뉴얼</span></p>
+  <p class="sm rv" style="margin-top:8px">8 PART · 38 EPISODE + 부록(Q&amp;A · 소문 바로잡기 · 체크리스트)</p>
+</div>
+
+<!-- CORE STEPS -->
+<div class="s gy">
+  <span class="tag rv">PART 04 · THE CORE</span>
+  <p class="t2 rv" style="margin-top:16px">어려운 설명은 없습니다.<br><span class="k">화면 보며 따라만 하세요.</span></p>
+  <div class="hand rv">
+    <div class="ph"><div class="bar"></div><div class="row"><i>1</i><span></span></div><div class="row"><i>2</i><span></span></div><div class="row on"><i>3</i><span>여기를 누르세요</span></div><div class="row"><i>4</i><span></span></div></div>
+    <p>클릭할 곳까지<br><b>번호와 그림으로</b><br>짚어 드립니다</p>
+  </div>
+  <p class="t3 rv" style="margin-top:30px">따라 하고 나면,<br>당신에게 <span class="k">이것이 생깁니다</span></p>
+  <div class="tlx">
+    <div class="rv"><span class="tm">0~10분</span><b>내 채널을 한눈에 관리하는 표</b><p>어떤 채널이 무엇에 연결돼 있는지, 사고가 나도 바로 파악</p></div>
+    <div class="rv lk2"><span class="tm">~25분</span><b>🔒 한 채널이 날아가도 나머지는 끄떡없는 첫 번째 기둥</b><p>책에서만 공개하는 채널별 완전 분리 설계</p></div>
+    <div class="rv lk2"><span class="tm">~30분</span><b>🔒 어떤 사고에도 내 채널로 돌아오는 복구 장치</b><p>해킹·휴대폰 분실에도 다시 들어오는 방법</p></div>
+    <div class="rv"><span class="tm">그다음</span><b>두 번째, 세 번째 채널은 복사하듯 그대로</b><p>채널이 늘어날수록 더 안전해지는 확장 순서</p></div>
+  </div>
+  <div class="bigtm rv"><p class="a">⏱ 처음 단 30분이</p><p class="b">앞으로 쌓을 모든 채널과<br><span>수천만 원의 수익</span>을 지킵니다</p></div>
+</div>
+
+<!-- BEYOND -->
+<div class="s bk">
+  <p class="t3 rv" style="color:#C9C5BF">채널을 지키는 법에서 끝나지 않습니다.</p>
+  <p class="t1 rv" style="margin-top:8px">돈이 <span class="k">계속 들어오는</span><br>채널 운영법까지.</p>
+  <p class="lead rv" style="margin-top:12px">수익화 승인부터 매달 수익이 쌓이기까지,<br>초보자가 막히는 지점을 모두 담았어요.</p>
+  <div class="ops">
+    <div class="rv"><em>✅</em><b>수익화 심사, 한 번에 통과하는 영상 기준</b></div>
+    <div class="rv"><em>🤖</em><b>AI 영상으로도 수익화되는 제작법</b></div>
+    <div class="rv"><em>🎥</em><b>카메라 없이도 만드는 수익화 채널</b></div>
+    <div class="rv"><em>⚖️</em><b>쇼츠 vs 롱폼, 하루 몇 개 올려야 할까</b></div>
+    <div class="rv"><em>💰</em><b>광고 말고도 돈이 들어오는 수익원 5가지</b></div>
+    <div class="rv"><em>🗓️</em><b>구독자 0명에서 시작하는 첫 30일 로드맵</b></div>
+  </div>
+</div>
+
+<!-- BONUS -->
+<div class="s pk">
+  <span class="tag rv">🎁 REVIEW BONUS</span>
+  <p class="t1 rv" style="margin-top:16px">정성스런 후기를 남기시면<br><span class="k">실전서 세 권</span>을<br>더 드립니다.</p>
+  <div class="bn3 rv">
+    <div><em>🚑</em><b>정지당했을 때</b><span>그대로 따라 쓰는<br>항소 답안지</span></div>
+    <div><em>🗺️</em><b>뭘 만들지 막막할 때</b><span>지금 뜨는 채널과<br>빈 틈새시장 지도</span></div>
+    <div><em>🛍️</em><b>구독자 500명부터</b><span>쇼핑쇼츠로<br>바로 버는 법</span></div>
+  </div>
+  <p class="t3 rv" style="margin-top:18px">본편으로 채널을 지키고,<br>특전 3권으로 <span class="k">다시 서고, 고르고, 법니다.</span></p>
+  <div class="fan3 rv"><div><img src="https://cdn.jsdelivr.net/gh/lawmoses/file@ba9b6f09bca8ccfd53cf7fead1476559b0255e55/detail/threads/yt-bonus1-appeal.jpg" alt="리뷰 특전 1 항소 실전 가이드 표지" width="1000" height="1339" loading="lazy" decoding="async" style="display:block;width:100%;max-width:100%;height:auto;margin:0 auto;object-fit:contain" onerror="this.onerror=null;this.src=this.src.replace('cdn.jsdelivr.net/gh/lawmoses/file@','raw.githubusercontent.com/lawmoses/file/')"></div><div><img src="https://cdn.jsdelivr.net/gh/lawmoses/file@ba9b6f09bca8ccfd53cf7fead1476559b0255e55/detail/threads/yt-bonus2-channel.jpg" alt="리뷰 특전 2 2026 롱폼·숏폼 성공 채널 해부 & 틈새시장 지도 표지" width="1000" height="1339" loading="lazy" decoding="async" style="display:block;width:100%;max-width:100%;height:auto;margin:0 auto;object-fit:contain" onerror="this.onerror=null;this.src=this.src.replace('cdn.jsdelivr.net/gh/lawmoses/file@','raw.githubusercontent.com/lawmoses/file/')"></div><div><img src="https://cdn.jsdelivr.net/gh/lawmoses/file@ba9b6f09bca8ccfd53cf7fead1476559b0255e55/detail/threads/yt-bonus3-shopping.jpg" alt="리뷰 특전 3 2026 유튜브 쇼핑쇼츠 수익화 & 운영 A to Z 표지" width="1000" height="1339" loading="lazy" decoding="async" style="display:block;width:100%;max-width:100%;height:auto;margin:0 auto;object-fit:contain" onerror="this.onerror=null;this.src=this.src.replace('cdn.jsdelivr.net/gh/lawmoses/file@','raw.githubusercontent.com/lawmoses/file/')"></div></div>
+  <div class="bks">
+    <div class="bkc rv"><div class="cvw"><img src="https://cdn.jsdelivr.net/gh/lawmoses/file@ba9b6f09bca8ccfd53cf7fead1476559b0255e55/detail/threads/yt-bonus1-appeal.jpg" alt="항소 실전 가이드 표지" width="1000" height="1339" loading="lazy" decoding="async" style="display:block;width:100%;max-width:100%;height:auto;margin:0 auto;object-fit:contain" onerror="this.onerror=null;this.src=this.src.replace('cdn.jsdelivr.net/gh/lawmoses/file@','raw.githubusercontent.com/lawmoses/file/')"></div><div><div class="nn">BONUS 01 · 21쪽</div><h4>정지 메일 받은 날 펼치는 항소 답안지</h4><ul><li>첫날 할 일, 순서대로</li><li>항소 영상 7단계·4분 30초 구성표</li><li>그대로 채워 쓰는 대본·요청 틀</li></ul></div></div>
+    <div class="bkc rv"><div class="cvw"><img src="https://cdn.jsdelivr.net/gh/lawmoses/file@ba9b6f09bca8ccfd53cf7fead1476559b0255e55/detail/threads/yt-bonus2-channel.jpg" alt="2026 롱폼·숏폼 성공 채널 해부 표지" width="1000" height="1339" loading="lazy" decoding="async" style="display:block;width:100%;max-width:100%;height:auto;margin:0 auto;object-fit:contain" onerror="this.onerror=null;this.src=this.src.replace('cdn.jsdelivr.net/gh/lawmoses/file@','raw.githubusercontent.com/lawmoses/file/')"></div><div><div class="nn">BONUS 02 · 67쪽</div><h4>롱폼·숏폼 성공 채널 해부 &amp; 틈새시장 지도</h4><ul><li>잘되는 채널의 공통점</li><li>아직 비어 있는 틈새시장</li><li>90일 실행표</li></ul></div></div>
+    <div class="bkc rv"><div class="cvw"><img src="https://cdn.jsdelivr.net/gh/lawmoses/file@ba9b6f09bca8ccfd53cf7fead1476559b0255e55/detail/threads/yt-bonus3-shopping.jpg" alt="2026 유튜브 쇼핑쇼츠 수익화 & 운영 A to Z 표지" width="1000" height="1339" loading="lazy" decoding="async" style="display:block;width:100%;max-width:100%;height:auto;margin:0 auto;object-fit:contain" onerror="this.onerror=null;this.src=this.src.replace('cdn.jsdelivr.net/gh/lawmoses/file@','raw.githubusercontent.com/lawmoses/file/')"></div><div><div class="nn">BONUS 03 · 78쪽</div><h4>2026 쇼핑쇼츠 수익화 &amp; 운영 A to Z</h4><ul><li>구독자 500명부터 쇼핑 제휴</li><li>제품 태그·30초 판매 대본 틀</li><li>저작권 신호등·30일 실행표</li></ul></div></div>
+  </div>
+  <div class="val rv"><div><b>166쪽</b><span>특전 3권 분량</span></div><div><b>3권</b><span>실전서</span></div><div class="z"><b>0원</b><span>후기 한 번이면</span></div></div>
+  <p class="sm" style="margin-top:12px">구매처 후기 → 캡처 → lawmosese1@gmail.com 전송 · 별점·내용과 관계없이 드려요<br>특전을 받는 후기라는 점은 후기에 함께 밝혀 주세요.</p>
+</div>
+
+<!-- WHO -->
+<div class="s w">
+  <p class="t2 rv">👍 이런 분께 권합니다</p>
+  <div class="who ok rv">
+    <div>유튜브로 <b>두 번째 월급</b>을 만들고 싶은 분</div>
+    <div>채널을 <b>이제 막 열었거나</b> 곧 열 분</div>
+    <div>쇼츠·롱폼 채널을 <b>여러 개</b> 키울 분</div>
+    <div>시니어·플리·AI·먹방·리뷰… <b>주제 상관없이</b> 수익화를 노리는 분</div>
+    <div>이미 운영 중인데 <b>계정이 하나로 묶여 있는</b> 분</div>
+  </div>
+  <div class="gap2"></div>
+  <span class="emo rv">🙅</span>
+  <p class="t2 rv" style="margin-top:8px">이런 분은 사지 마세요</p>
+  <div class="who no rv">
+    <div>채널이 <b class="k">하루아침에 날아가도</b> 괜찮은 분</div>
+    <div>수익이 <b class="k">0원이 돼도</b> 상관없는 분</div>
+    <div>정지 메일을 받고 나서 <b class="k">그때 알아보겠다</b>는 분</div>
+  </div>
+</div>
+
+<!-- TRUST (risk reversal) -->
+<div class="s bk">
+  <span class="emo rv">🤔</span>
+  <p class="t2 rv" style="margin-top:10px">아직 망설여진다면,<br><span class="k">이것만 확인하세요.</span></p>
+  <div class="trust">
+    <div class="tr rv"><em>📚</em><div><b>카더라로 손해 볼 일이 없습니다</b><span>모든 내용에 출처 번호. 유튜브·구글 공식 문서 94건을 한 줄씩 확인했어요.</span></div></div>
+    <div class="tr rv"><em>🧑‍💻</em><div><b>책상 위 이론이 아닙니다</b><span>저자가 채널을 잃은 뒤 찾은 방식 그대로, 지금도 문제없이 운영 중이에요.</span></div></div>
+    <div class="tr rv"><em>🗓️</em><div><b>2026년 10월 최신 정책 기준</b><span>2027년 수익화 기준 변경까지 반영했어요.</span></div></div>
+    <div class="tr rv"><em>🎁</em><div><b>후기만 남겨도 실전서 3권이 더</b><span>본편 한 권 값으로 4권 · 166쪽이 추가로 내 것이 됩니다.</span></div></div>
+    <div class="tr rv"><em>🔍</em><div><b>구매 전에 모든 걸 투명하게</b><span>목차·구성·환불 규정까지 이 페이지에 전부 공개했어요.</span></div></div>
+  </div>
+</div>
+
+<!-- PRICE -->
+<div class="s rd" style="padding-top:60px;padding-bottom:76px">
+  <span class="tag w rv">⏰ SUPER EARLY BIRD</span>
+  <div class="price rv">
+    <p class="pk2">유튜브·쇼츠 시작 전, 아무도 가르쳐 주지 않는 것들<br>본편 + 리뷰 특전 3권 · 4권 패키지</p>
+    <s>정가 399,000원</s>
+    <div class="now"><span>93%</span><b>27,900원</b></div>
+    <p class="sv">지금 사면 371,100원 아낍니다</p>
+    <div class="lad">
+      <div class="on"><span><i>지금</i>얼리버드</span><span>27,900원</span></div>
+      <div><span><i>정가</i>정가</span><span>399,000원</span></div>
+    </div>
+    <ul class="inc"><li>본편 505쪽 (8 PART · 38 EPISODE)</li><li>리뷰 특전 3권 166쪽</li><li>2026년 10월 공식 정책 확인 · 출처 252건</li></ul>
+  </div>
+  <div class="roi rv">
+    <p style="font-size:18px;font-weight:900;color:#fff;margin-bottom:6px">💡 이렇게 계산해 보세요</p>
+    <div class="r"><span>1년 동안 채널을 지킨다면</span><b>하루 <span style="color:#FFD400">76원</span></b></div>
+    <div class="r"><span>예시) 채널 하나 월 수익 50만 원이라면</span><b class="k">약 2일치 수익이면 본전</b></div>
+    <div class="r"><span>채널 3개가 함께 멈춘다면</span><b style="color:#FF3B41">수백~수천만 원</b></div>
+    <p style="font-size:12px;color:#77736E;margin-top:8px">※ 이해를 돕기 위한 단순 계산 예시입니다.</p>
+  </div>
+  <p class="sm rv" style="margin-top:16px">※ 디지털 파일 특성상 다운로드(열람) 후에는 환불이 불가합니다.</p>
+</div>
+
+<!-- FAQ -->
+<div class="s dk" style="padding-top:20px">
+  <span class="tag rv">FAQ</span>
+  <p class="t2 rv" style="margin-top:14px">자주 묻는 질문</p>
+  <div class="faq">
+    <div class="qa rv"><p class="q">아직 유튜브를 시작도 안 했는데요?</p><p class="a">지금이 가장 좋은 때예요. 계정 구조는 채널이 커진 뒤엔 바꾸기 어렵지만, 시작 전이라면 30분이면 됩니다. 처음 보는 단어는 ‘낱말 풀이’부터 쉽게 풀어 드려요.</p></div>
+    <div class="qa rv"><p class="q">이미 채널을 운영 중이에요. 늦었나요?</p><p class="a">늦지 않았어요. PART 4의 STEP 1(관리표)부터 바로 시작하세요. 기존 개인 Gmail 채널을 옮길지, 새로 열지 판단 기준도 담았어요.</p></div>
+    <div class="qa rv"><p class="q">벌써 정지 메일을 받았어요.</p><p class="a">PART 8부터 펼치세요. 첫날 할 일과 하면 안 되는 일, 폐쇄 항소·수익화 정지 대응까지 순서대로 정리했고, 특전 1권 ‘항소 실전 가이드’도 함께 드려요.</p></div>
+    <div class="qa rv"><p class="q">정말 효과가 있는 방법인가요?</p><p class="a">저자가 채널을 잃은 뒤 찾아낸 방식 그대로 지금 운영 중이며, 지금까지 문제없이 운영하고 있어요. 방법마다 공식 문서·해외 원문 출처를 달아 직접 확인할 수 있어요.</p></div>
+    <div class="qa rv"><p class="q">컴퓨터를 잘 못해도 되나요?</p><p class="a">네. 106개의 그림·도표·화면으로 클릭 하나하나 따라 하게 만들었어요. 핵심 세팅(PART 4)은 특별한 장비나 유료 프로그램 없이 시작할 수 있어요.</p></div>
+    <div class="qa rv"><p class="q">리뷰 특전은 어떻게 받나요?</p><p class="a">구매하신 곳에 정성스러운 후기를 남기고, 후기 화면을 캡처해 lawmosese1@gmail.com 으로 보내 주시면 답장으로 세 권을 보내 드려요. 별점·내용과 관계없이 드립니다.</p></div>
+    <div class="qa rv"><p class="q">책 말고 추가 비용이 있나요?</p><p class="a">없어요. 핵심 세팅(PART 4)은 무료 도구만으로 따라 할 수 있어요. 심화 분리(PART 6)의 유료 도구는 채널이 늘었을 때 고르는 선택 사항이에요.</p></div>
+    <div class="qa rv"><p class="q">27,900원, 부담스러워요.</p><p class="a">채널 하나가 멈추면 잃는 돈은 수백만 원 단위예요. 1년으로 나누면 하루 76원, 채널 하나의 수익 중 아주 일부만 지켜도 남는 계산입니다.</p></div>
+    <div class="qa rv"><p class="q">나중에 채널이 커지면 그때 사도 되지 않나요?</p><p class="a">계정 구조는 채널이 커진 뒤에는 바꾸기가 훨씬 어렵습니다. 시작 전이라면 30분이면 되지만, 터진 뒤에는 되돌릴 수 없어요.</p></div>
+    <div class="qa rv"><p class="q">환불이 되나요?</p><p class="a">디지털 파일(PDF) 특성상 다운로드(열람) 후에는 환불이 불가합니다. 상세페이지를 충분히 확인하신 뒤 구매해 주세요.</p></div>
+  </div>
+</div>
+
+<!-- NOTE -->
+<div class="s gy" style="padding-top:44px;padding-bottom:50px">
+  <span class="tag d">Please Note</span>
+  <p class="t3" style="margin-top:12px;text-align:left">유의사항</p>
+  <ul class="note">
+    <li>본 상품은 정보 및 교육 콘텐츠를 제공하는 전자책으로, 특정 수익의 발생이나 금액을 약속하지 않습니다.</li>
+    <li>디지털 파일 특성상 다운로드(열람) 후에는 환불이 불가합니다.</li>
+    <li>구매하신 한 분만 이용할 수 있으며, 공유·재배포·재판매·강의 자료 활용은 저작권법에 따라 금지됩니다.</li>
+    <li>리뷰 특전 3권은 후기 인증 후 별도로 제공됩니다.</li>
+    <li>소개된 수익 사례는 운영자가 직접 공개한 개별 사례이며, 실제 성과는 실행 정도·투입 시간·시장 상황에 따라 달라질 수 있습니다.</li>
+    <li>수익 감소 화면과 정지 메일은 이해를 돕기 위한 예시입니다.</li>
+    <li>YouTube·Google·AdSense는 Google LLC의 상표이며, 이 책은 구글과 제휴 관계가 없는 독립 출판물로, 법률·세무 자문을 대신하지 않습니다. 정책은 2026년 10월 확인 기준이며 바뀔 수 있습니다.</li>
+  </ul>
+  <p class="sm" style="margin-top:18px;text-align:left">© 2026 튜브 팩터 (Tube Factor). All Rights Reserved.</p>
+</div>
+
+<!-- FINAL -->
+<div class="s bk" style="padding-top:80px;padding-bottom:90px;background:#0A0A0A repeating-linear-gradient(135deg,transparent 0 20px,rgba(226,20,27,.07) 20px 40px)">
+  <div class="gifr redg rv" style="margin-top:0"><div class="an an-bomb" role="img" aria-label="시한폭탄 카운트다운 후 수익 0원"><p class="tt">당신의 채널, 남은 시간</p><div class="led"><div class="dg">00:00:0<span class="win"><span class="strip"><span>5</span><span>4</span><span>3</span><span>2</span><span>1</span><span>0</span></span></span></div><div class="u"><span>HOUR</span><span>MIN</span><span>SEC</span></div></div><div class="wr"><i style="background:#E2141B"></i><i style="background:#2F7BFF"></i><i style="background:#FFD400"></i></div><p class="ft">언제 터질지, <span style="color:#FF2A31">아무도 모릅니다</span></p><div class="boom"><em>💥</em><b>수익 0원</b><span>터지는 순간, 모든 채널이 함께</span></div></div></div>
+  <p class="t1 rv" style="margin-top:30px"><span class="k">수익 0원 폭탄</span>은<br>터진 뒤에<br>해체할 수 없습니다.</p>
+  <p class="t2 rv" style="margin-top:14px"><span class="k">시작하기 전에,</span><br>수익 0원의 뇌관부터<br>뽑으세요.</p>
+  <div class="bkst rv"><div class="pdb"><small>유튜브·쇼츠<br>시작 전</small><b>필독서</b></div><div class="bkcard"><img src="https://cdn.jsdelivr.net/gh/lawmoses/file@ba9b6f09bca8ccfd53cf7fead1476559b0255e55/detail/threads/yt-book-main.jpg" alt="유튜브·쇼츠 시작 전, 아무도 가르쳐 주지 않는 것들 · 본편 + 리뷰 특전 3권 4권 패키지 책 표지" width="1000" height="1325" loading="lazy" decoding="async" style="display:block;width:100%;max-width:100%;height:auto;margin:0 auto;object-fit:contain" onerror="this.onerror=null;this.src=this.src.replace('cdn.jsdelivr.net/gh/lawmoses/file@','raw.githubusercontent.com/lawmoses/file/')"></div></div>
+  <div class="okbtn rv">지금<br>시작<small>얼리버드</small></div>
+  <p class="lead rv" style="margin-top:18px;font-size:19px">페이지 맨 아래 <b style="color:#fff">구매 버튼</b>에서<br>얼리버드 <b style="color:#FF2A31">27,900원</b>으로 바로 시작하세요</p>
+  <span class="ctaline rv">371,100원 아끼고,<br>수천만 원의 수익을 지키는 30분 시작하기</span>
+  <div class="micro rv"><span>구매</span><i>→</i><span>바로 다운로드</span><i>→</i><span>오늘 30분 세팅</span><i>→</i><span>내일부터 안심</span></div>
+  <p class="sm rv" style="margin-top:12px;color:#A7A39D">후기를 남기면 실전서 3권이 바로 추가됩니다</p>
+  <div class="gifr" style="margin-top:20px;box-shadow:none;border-radius:0"><div class="an an-ptr" role="img" aria-label="맨 아래 구매 버튼을 가리키는 손가락"><span class="f">👇</span></div></div>
+</div>
+
+</div>
+<script>
+(function(){
+  var root=document.getElementById('tfRoot'); if(!root) return;
+  root.classList.add('js');
+  var els=root.querySelectorAll('.rv');
+  function show(e){e.classList.add('in');
+    if(e.id==='tfDrop'){e.classList.add('go')}
+    e.querySelectorAll&&e.querySelectorAll('.num').forEach(run);
+    if(e.classList.contains('num'))run(e);}
+  function run(n){ if(n._d) return; n._d=1;
+    var to=parseInt(n.getAttribute('data-to'),10), fr=parseInt(n.getAttribute('data-from')||'0',10), pre=n.textContent.indexOf('₩')===0?'₩':'', t0=null, dur=fr>to?2400:1300;
+    function f(ts){ if(!t0)t0=ts; var p=Math.min(1,(ts-t0)/dur), e=1-Math.pow(1-p,3); n.textContent=pre+Math.round(fr+(to-fr)*e).toLocaleString('ko-KR'); if(p<1) requestAnimationFrame(f); }
+    setTimeout(function(){requestAnimationFrame(f)},fr>to?300:0); }
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){show(e.target);io.unobserve(e.target)}})},{threshold:.15});
+    els.forEach(function(e){io.observe(e)});
+  } else { els.forEach(show); }
+  setTimeout(function(){els.forEach(function(e){e.classList.add('in')})},8000);
+})();
+</script>
+</div>
