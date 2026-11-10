@@ -1,0 +1,53 @@
+name: fetch-yt-thumbs
+on:
+  push:
+    paths:
+      - '.github/workflows/fetch-yt-thumbs.yml'
+permissions:
+  contents: write
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: download thumbnails
+        shell: bash
+        run: |
+          set -e
+          mkdir -p detail/studio/yt
+          get() {
+            n="$1"; id="$2"
+            curl -fsSL "https://i.ytimg.com/vi/$id/mqdefault.jpg" -o "detail/studio/yt/yt-$n.jpg" || curl -fsSL "https://img.youtube.com/vi/$id/mqdefault.jpg" -o "detail/studio/yt/yt-$n.jpg"
+          }
+          get 01 vLX5crVu7hQ
+          get 02 ULO-HaZFstg
+          get 03 fEvINFi_iqg
+          get 04 WiurnZ513-I
+          get 05 lREmloBw31I
+          get 06 Y0dfGNTAzHs
+          get 07 LyiTnuiXCmk
+          get 08 227EPXBOtwo
+          get 09 kkPofhpZ-BQ
+          get 10 anYeWfBlXl8
+          get 11 Opq7iGrvTdg
+          get 12 YuhyfbmWvsE
+          get 13 OzVshEoUDLU
+          get 14 rRNhcRdC8S0
+          get 15 Q5XjZ1yVUws
+          get 16 StYRJg0UUhA
+          get 17 MLEVLQ5qjdw
+          get 18 pUL8MOJBxcQ
+          get 19 et6CS1GX0bo
+          get 20 DPIYikzS2iU
+          get 21 6njIPFXTmX0
+          get 22 21IyLMyinV8
+          ls -la detail/studio/yt
+      - name: commit
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git rm -q .github/workflows/fetch-yt-thumbs.yml
+          git add detail/studio/yt
+          git commit -m "detail/studio/yt: sound-check YouTube thumbnails (one-time fetch, workflow removed)"
+          git push
